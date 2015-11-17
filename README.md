@@ -1,0 +1,1 @@
+Dette er Gruppe 6 sitt Git-repo for prosjektet
