@@ -88,44 +88,56 @@ namespace PJAPP
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070003
-			public const int buttonWrap = 2131165187;
-			
-			// aapt resource value: 0x7f070005
-			public const int glemtButton = 2131165189;
-			
-			// aapt resource value: 0x7f070000
-			public const int imageView1 = 2131165184;
-			
-			// aapt resource value: 0x7f07000b
-			public const int infoBox = 2131165195;
-			
-			// aapt resource value: 0x7f070007
-			public const int linearLayout1 = 2131165191;
-			
 			// aapt resource value: 0x7f070004
-			public const int loggInnButton = 2131165188;
-			
-			// aapt resource value: 0x7f070008
-			public const int menuButton = 2131165192;
-			
-			// aapt resource value: 0x7f07000a
-			public const int searchButton = 2131165194;
-			
-			// aapt resource value: 0x7f07000c
-			public const int textView1 = 2131165196;
+			public const int buttonWrap = 2131165188;
 			
 			// aapt resource value: 0x7f070006
-			public const int toolbar = 2131165190;
+			public const int glemtButton = 2131165190;
+			
+			// aapt resource value: 0x7f07000d
+			public const int grupperomButton = 2131165197;
 			
 			// aapt resource value: 0x7f070001
-			public const int txtEmail = 2131165185;
+			public const int imageView1 = 2131165185;
 			
-			// aapt resource value: 0x7f070002
-			public const int txtPassword = 2131165186;
+			// aapt resource value: 0x7f07000c
+			public const int infoBox = 2131165196;
+			
+			// aapt resource value: 0x7f070008
+			public const int linearLayout1 = 2131165192;
+			
+			// aapt resource value: 0x7f070005
+			public const int loggInnButton = 2131165189;
+			
+			// aapt resource value: 0x7f070010
+			public const int loggUtButton = 2131165200;
 			
 			// aapt resource value: 0x7f070009
-			public const int westerdalsLogo = 2131165193;
+			public const int menuButton = 2131165193;
+			
+			// aapt resource value: 0x7f07000f
+			public const int minProfilButton = 2131165199;
+			
+			// aapt resource value: 0x7f07000b
+			public const int searchButton = 2131165195;
+			
+			// aapt resource value: 0x7f070000
+			public const int textView1 = 2131165184;
+			
+			// aapt resource value: 0x7f070007
+			public const int toolbar = 2131165191;
+			
+			// aapt resource value: 0x7f070002
+			public const int txtEmail = 2131165186;
+			
+			// aapt resource value: 0x7f070003
+			public const int txtPassword = 2131165187;
+			
+			// aapt resource value: 0x7f07000e
+			public const int veilederButton = 2131165198;
+			
+			// aapt resource value: 0x7f07000a
+			public const int westerdalsLogo = 2131165194;
 			
 			static Id()
 			{
@@ -141,13 +153,16 @@ namespace PJAPP
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int gruppeRom = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int mainPage = 2130903041;
+			public const int Main = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int menuDialog = 2130903042;
+			public const int mainPage = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int menuDialog = 2130903043;
 			
 			static Layout()
 			{
