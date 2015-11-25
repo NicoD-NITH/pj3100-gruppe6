@@ -1,0 +1,9 @@
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\PJAPP.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\Mono.Android.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\mscorlib.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.Core.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.Xml.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.Xml.Linq.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.Runtime.Serialization.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.ServiceModel.Internals.dll

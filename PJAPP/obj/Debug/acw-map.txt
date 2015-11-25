@@ -1,0 +1,8 @@
+PJAPP.MainPage, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.MainPage
+PJAPP.MainPage, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.MainPage
+PJAPP.MainPage;md59db0963bbf397043484a3f6db5cf9cc5.MainPage
+pjapp.MainPage;md59db0963bbf397043484a3f6db5cf9cc5.MainPage
+PJAPP.MainActivity, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.MainActivity
+PJAPP.MainActivity, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.MainActivity
+PJAPP.MainActivity;md59db0963bbf397043484a3f6db5cf9cc5.MainActivity
+pjapp.MainActivity;md59db0963bbf397043484a3f6db5cf9cc5.MainActivity
