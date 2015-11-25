@@ -100,11 +100,8 @@ namespace PJAPP
 			// aapt resource value: 0x7f070001
 			public const int imageView1 = 2131165185;
 			
-			// aapt resource value: 0x7f07000c
-			public const int infoBox = 2131165196;
-			
 			// aapt resource value: 0x7f070008
-			public const int linearLayout1 = 2131165192;
+			public const int infoBox = 2131165192;
 			
 			// aapt resource value: 0x7f070005
 			public const int loggInnButton = 2131165189;
@@ -113,13 +110,16 @@ namespace PJAPP
 			public const int loggUtButton = 2131165200;
 			
 			// aapt resource value: 0x7f070009
-			public const int menuButton = 2131165193;
+			public const int menuBar = 2131165193;
+			
+			// aapt resource value: 0x7f07000a
+			public const int menuButton = 2131165194;
 			
 			// aapt resource value: 0x7f07000f
 			public const int minProfilButton = 2131165199;
 			
-			// aapt resource value: 0x7f07000b
-			public const int searchButton = 2131165195;
+			// aapt resource value: 0x7f07000c
+			public const int searchButton = 2131165196;
 			
 			// aapt resource value: 0x7f070000
 			public const int textView1 = 2131165184;
@@ -136,8 +136,8 @@ namespace PJAPP
 			// aapt resource value: 0x7f07000e
 			public const int veilederButton = 2131165198;
 			
-			// aapt resource value: 0x7f07000a
-			public const int westerdalsLogo = 2131165194;
+			// aapt resource value: 0x7f07000b
+			public const int westerdalsLogo = 2131165195;
 			
 			static Id()
 			{
@@ -162,7 +162,10 @@ namespace PJAPP
 			public const int mainPage = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int menuDialog = 2130903043;
+			public const int menuBar = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int menuDialog = 2130903044;
 			
 			static Layout()
 			{

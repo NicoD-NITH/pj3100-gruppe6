@@ -18,7 +18,7 @@ namespace PJAPP
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            this.RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.gruppeRom);
             // Create your application here
         }

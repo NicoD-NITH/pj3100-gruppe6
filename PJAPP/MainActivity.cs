@@ -18,7 +18,7 @@ namespace PJAPP
         {
             
             base.OnCreate(bundle);
-
+            this.RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.Main);
 
             loggInnButton = FindViewById<Button>(Resource.Id.loggInnButton);

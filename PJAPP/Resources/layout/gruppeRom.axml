@@ -5,7 +5,10 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:minWidth="300dp"
-    android:minHeight="400dp">
+    android:minHeight="400dp"
+    android:weightSum="100">
+    <include
+        layout="@layout/menuBar" />
     <TextView
         android:text="LOL TEXT"
         android:textAppearance="?android:attr/textAppearanceLarge"

@@ -63,6 +63,7 @@
     <AndroidResource Include="Resources\layout\menuDialog.axml" />
     <AndroidResource Include="Resources\layout\mainPage.axml" />
     <AndroidResource Include="Resources\layout\gruppeRom.axml" />
+    <AndroidResource Include="Resources\layout\menuBar.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />

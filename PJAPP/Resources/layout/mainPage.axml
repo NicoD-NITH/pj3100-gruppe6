@@ -10,34 +10,8 @@
     android:id="@+id/toolbar"
     android:columnCount="3"
     android:showDividers="none">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="12"
-        android:weightSum="100"
-        android:id="@+id/linearLayout1">
-        <Button
-            android:text="Meny"
-            android:layout_width="0dp"
-            android:layout_weight="30"
-            android:layout_height="match_parent"
-            android:id="@+id/menuButton" />
-        <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="0dp"
-            android:layout_weight="40"
-            android:layout_height="match_parent"
-            android:id="@+id/westerdalsLogo" />
-        <Button
-            android:text="Søk"
-            android:layout_width="0dp"
-            android:layout_weight="30"
-            android:layout_height="match_parent"
-            android:id="@+id/searchButton" />
-    </LinearLayout>
+    <include
+        layout="@layout/menuBar" />
     <FrameLayout
         android:minWidth="25px"
         android:minHeight="25px"
