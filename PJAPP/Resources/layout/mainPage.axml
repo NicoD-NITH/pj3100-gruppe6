@@ -20,7 +20,7 @@
         android:weightSum="100"
         android:id="@+id/linearLayout1">
         <Button
-            android:text="Button"
+            android:text="Meny"
             android:layout_width="0dp"
             android:layout_weight="30"
             android:layout_height="match_parent"
@@ -32,7 +32,7 @@
             android:layout_height="match_parent"
             android:id="@+id/westerdalsLogo" />
         <Button
-            android:text="Button"
+            android:text="Søk"
             android:layout_width="0dp"
             android:layout_weight="30"
             android:layout_height="match_parent"
