@@ -19,8 +19,8 @@ namespace PJAPP
         Button searchButton;
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
             this.RequestWindowFeature(WindowFeatures.NoTitle);
+            base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.mainPage);
 
             menuButton = FindViewById<Button>(Resource.Id.menuButton);

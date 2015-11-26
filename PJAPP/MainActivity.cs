@@ -16,9 +16,8 @@ namespace PJAPP
 
         protected override void OnCreate(Bundle bundle)
         {
-            
-            base.OnCreate(bundle);
             this.RequestWindowFeature(WindowFeatures.NoTitle);
+            base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
 
             loggInnButton = FindViewById<Button>(Resource.Id.loggInnButton);
