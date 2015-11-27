@@ -17,6 +17,7 @@ namespace PJAPP
     {
         BeaconManager _beaconManager;
         Region _region;
+        ImageButton menuButton;
 
         public List<RomBeacon> mNames;
         public ListView mListView;
@@ -26,6 +27,13 @@ namespace PJAPP
             base.OnCreate(savedInstanceState);
             this.RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.gruppeRom);
+
+            menuButton = FindViewById<ImageButton>(Resource.Id.menuButton);
+
+            menuButton.Click += delegate
+            {
+                StartActivity(typeof(Menu));
+            };
 
             _beaconManager = new BeaconManager(this);
             _region = new Region("SomeBeaconIdentifier", "b9407f30-f5f8-466e-aff9-25556b57fe6d");

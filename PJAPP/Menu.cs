@@ -37,6 +37,21 @@ namespace PJAPP
                 StartActivity(typeof(Grupperom));
             };
 
+            veileder.Click += delegate
+            {
+                StartActivity(typeof(veilederSide));
+            };
+
+            minProfil.Click += delegate
+            {
+                StartActivity(typeof(profilSide));
+            };
+
+            loggUt.Click += delegate
+            {
+                StartActivity(typeof(MainActivity));
+            };
+
         }
     }
 }
