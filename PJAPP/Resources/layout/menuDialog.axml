@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#FFFFFF"
+    android:background="#F9F7EE"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:minWidth="25px"
@@ -11,6 +11,7 @@
         layout="@layout/menuBar" />
     <Button
         android:text="Grupperom"
+        android:textColor="#000"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="15"
@@ -21,6 +22,7 @@
         android:background="@drawable/bigButtonStyle" />
     <Button
         android:text="Veileder"
+        android:textColor="#000"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="15"
@@ -30,6 +32,7 @@
         android:background="@drawable/bigButtonStyle" />
     <Button
         android:text="Min profil"
+        android:textColor="#000"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="15"
@@ -39,6 +42,7 @@
         android:background="@drawable/bigButtonStyle" />
     <Button
         android:text="Logg ut"
+        android:textColor="#000"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="15"

@@ -15,15 +15,15 @@ namespace PJAPP
     [Activity(Label = "MainPage")]
     public class MainPage : Activity
     {
-        Button menuButton;
-        Button searchButton;
+        ImageButton menuButton;
+        ImageButton searchButton;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             this.RequestWindowFeature(WindowFeatures.NoTitle);
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.mainPage);
 
-            menuButton = FindViewById<Button>(Resource.Id.menuButton);
+            menuButton = FindViewById<ImageButton>(Resource.Id.menuButton);
 
             menuButton.Click += delegate
             {

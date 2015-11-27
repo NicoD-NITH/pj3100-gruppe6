@@ -5,7 +5,7 @@
     android:minHeight="25px"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/background_light"
+    android:background="#F9F7EE"
     android:weightSum="100"
     android:id="@+id/toolbar"
     android:columnCount="3"
