@@ -58,9 +58,11 @@
     <Compile Include="MainPage.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="profilSide.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RomBeacon.cs" />
+    <Compile Include="veilederSide.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -72,6 +74,9 @@
     <AndroidResource Include="Resources\layout\gruppeRom.axml" />
     <AndroidResource Include="Resources\layout\menuBar.axml" />
     <AndroidResource Include="Resources\layout\gruppeRomRow.axml" />
+    <AndroidResource Include="Resources\layout\veileder.axml" />
+    <AndroidResource Include="Resources\layout\profilSide.axml" />
+    <AndroidResource Include="Resources\drawable\medalje16.psd" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -122,6 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\sok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\menuItemStyle.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

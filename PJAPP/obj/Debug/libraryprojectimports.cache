@@ -1,8 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
   <Jars></Jars>
-  <ResolvedResourceDirectories />
-  <ResolvedAssetDirectories />
+  <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\__library_projects__\Xamarin.Estimote.Android\library_project_imports\res</ResolvedResourceDirectory>
+  </ResolvedResourceDirectories>
+  <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\__library_projects__\Xamarin.Estimote.Android\library_project_imports\assets</ResolvedAssetDirectory>
+  </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
-  <ResolvedResourceDirectoryStamps />
+  <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\__library_projects__\Xamarin.Estimote.Android.stamp</ResolvedResourceDirectoryStamp>
+  </ResolvedResourceDirectoryStamps>
 </Paths>

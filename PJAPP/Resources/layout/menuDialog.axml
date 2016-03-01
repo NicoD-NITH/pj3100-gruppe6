@@ -10,8 +10,9 @@
     <include
         layout="@layout/menuBar" />
     <Button
-        android:text="Grupperom"
+        android:text="Grupperom            -&gt;"
         android:textColor="#000"
+        android:gravity="center_vertical|left"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="15"
@@ -19,35 +20,53 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:background="@drawable/bigButtonStyle" />
+        android:background="@drawable/menuItemStyle"
+        style="?android:attr/borderlessButtonStyle"
+        android:textSize="35sp"
+        android:textAllCaps="false" />
     <Button
-        android:text="Veileder"
+        android:text="Veileder                  -&gt;"
         android:textColor="#000"
+        android:gravity="center_vertical|left"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="15"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/veilederButton"
-        android:background="@drawable/bigButtonStyle" />
+        android:background="@drawable/menuItemStyle"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_marginTop="10dp"
+        android:textSize="35sp"
+        android:textAllCaps="false" />
     <Button
-        android:text="Min profil"
+        android:text="Min Profil               -&gt;"
         android:textColor="#000"
+        android:gravity="center_vertical|left"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="15"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/minProfilButton"
-        android:background="@drawable/bigButtonStyle" />
+        android:background="@drawable/menuItemStyle"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_marginTop="10dp"
+        android:textSize="35sp"
+        android:textAllCaps="false" />
     <Button
-        android:text="Logg ut"
+        android:text="Logg Ut                  -&gt;"
         android:textColor="#000"
+        android:gravity="center_vertical|left"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="15"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/loggUtButton"
-        android:background="@drawable/bigButtonStyle" />
+        android:background="@drawable/menuItemStyle"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_marginTop="10dp"
+        android:textSize="35sp"
+        android:textAllCaps="false" />
 </LinearLayout>

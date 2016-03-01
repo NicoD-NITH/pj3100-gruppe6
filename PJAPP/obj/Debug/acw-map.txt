@@ -1,3 +1,11 @@
+PJAPP.Grupperom, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.Grupperom
+PJAPP.Grupperom, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.Grupperom
+PJAPP.Grupperom;md59db0963bbf397043484a3f6db5cf9cc5.Grupperom
+pjapp.Grupperom;md59db0963bbf397043484a3f6db5cf9cc5.Grupperom
+PJAPP.gruppeRomListAdapter, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.gruppeRomListAdapter
+PJAPP.gruppeRomListAdapter, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.gruppeRomListAdapter
+PJAPP.gruppeRomListAdapter;md59db0963bbf397043484a3f6db5cf9cc5.gruppeRomListAdapter
+pjapp.gruppeRomListAdapter;md59db0963bbf397043484a3f6db5cf9cc5.gruppeRomListAdapter
 PJAPP.MainPage, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.MainPage
 PJAPP.MainPage, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.MainPage
 PJAPP.MainPage;md59db0963bbf397043484a3f6db5cf9cc5.MainPage
@@ -6,3 +14,39 @@ PJAPP.MainActivity, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.MainActivity
 PJAPP.MainActivity, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.MainActivity
 PJAPP.MainActivity;md59db0963bbf397043484a3f6db5cf9cc5.MainActivity
 pjapp.MainActivity;md59db0963bbf397043484a3f6db5cf9cc5.MainActivity
+PJAPP.Menu, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.Menu
+PJAPP.Menu, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.Menu
+PJAPP.Menu;md59db0963bbf397043484a3f6db5cf9cc5.Menu
+pjapp.Menu;md59db0963bbf397043484a3f6db5cf9cc5.Menu
+PJAPP.profilSide, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.profilSide
+PJAPP.profilSide, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.profilSide
+PJAPP.profilSide;md59db0963bbf397043484a3f6db5cf9cc5.profilSide
+pjapp.profilSide;md59db0963bbf397043484a3f6db5cf9cc5.profilSide
+PJAPP.veilederSide, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.veilederSide
+PJAPP.veilederSide, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.veilederSide
+PJAPP.veilederSide;md59db0963bbf397043484a3f6db5cf9cc5.veilederSide
+pjapp.veilederSide;md59db0963bbf397043484a3f6db5cf9cc5.veilederSide
+EstimoteSdk.BeaconManager/IEddystoneListenerImplementor, Xamarin.Estimote.Android;mono.com.estimote.sdk.BeaconManager_EddystoneListenerImplementor
+EstimoteSdk.BeaconManager+IEddystoneListenerImplementor, Xamarin.Estimote.Android, Version=1.0.8.7, Culture=neutral, PublicKeyToken=null;mono.com.estimote.sdk.BeaconManager_EddystoneListenerImplementor
+EstimoteSdk.BeaconManager.IEddystoneListenerImplementor;mono.com.estimote.sdk.BeaconManager_EddystoneListenerImplementor
+mono.com.estimote.sdk.BeaconManager_EddystoneListenerImplementor;mono.com.estimote.sdk.BeaconManager_EddystoneListenerImplementor
+EstimoteSdk.BeaconManager/IErrorListenerImplementor, Xamarin.Estimote.Android;mono.com.estimote.sdk.BeaconManager_ErrorListenerImplementor
+EstimoteSdk.BeaconManager+IErrorListenerImplementor, Xamarin.Estimote.Android, Version=1.0.8.7, Culture=neutral, PublicKeyToken=null;mono.com.estimote.sdk.BeaconManager_ErrorListenerImplementor
+EstimoteSdk.BeaconManager.IErrorListenerImplementor;mono.com.estimote.sdk.BeaconManager_ErrorListenerImplementor
+mono.com.estimote.sdk.BeaconManager_ErrorListenerImplementor;mono.com.estimote.sdk.BeaconManager_ErrorListenerImplementor
+EstimoteSdk.BeaconManager/IMonitoringListenerImplementor, Xamarin.Estimote.Android;mono.com.estimote.sdk.BeaconManager_MonitoringListenerImplementor
+EstimoteSdk.BeaconManager+IMonitoringListenerImplementor, Xamarin.Estimote.Android, Version=1.0.8.7, Culture=neutral, PublicKeyToken=null;mono.com.estimote.sdk.BeaconManager_MonitoringListenerImplementor
+EstimoteSdk.BeaconManager.IMonitoringListenerImplementor;mono.com.estimote.sdk.BeaconManager_MonitoringListenerImplementor
+mono.com.estimote.sdk.BeaconManager_MonitoringListenerImplementor;mono.com.estimote.sdk.BeaconManager_MonitoringListenerImplementor
+EstimoteSdk.BeaconManager/INearableListenerImplementor, Xamarin.Estimote.Android;mono.com.estimote.sdk.BeaconManager_NearableListenerImplementor
+EstimoteSdk.BeaconManager+INearableListenerImplementor, Xamarin.Estimote.Android, Version=1.0.8.7, Culture=neutral, PublicKeyToken=null;mono.com.estimote.sdk.BeaconManager_NearableListenerImplementor
+EstimoteSdk.BeaconManager.INearableListenerImplementor;mono.com.estimote.sdk.BeaconManager_NearableListenerImplementor
+mono.com.estimote.sdk.BeaconManager_NearableListenerImplementor;mono.com.estimote.sdk.BeaconManager_NearableListenerImplementor
+EstimoteSdk.BeaconManager/IRangingListenerImplementor, Xamarin.Estimote.Android;mono.com.estimote.sdk.BeaconManager_RangingListenerImplementor
+EstimoteSdk.BeaconManager+IRangingListenerImplementor, Xamarin.Estimote.Android, Version=1.0.8.7, Culture=neutral, PublicKeyToken=null;mono.com.estimote.sdk.BeaconManager_RangingListenerImplementor
+EstimoteSdk.BeaconManager.IRangingListenerImplementor;mono.com.estimote.sdk.BeaconManager_RangingListenerImplementor
+mono.com.estimote.sdk.BeaconManager_RangingListenerImplementor;mono.com.estimote.sdk.BeaconManager_RangingListenerImplementor
+EstimoteSdk.Utils/IRestartCompletedListenerImplementor, Xamarin.Estimote.Android;mono.com.estimote.sdk.Utils_RestartCompletedListenerImplementor
+EstimoteSdk.Utils+IRestartCompletedListenerImplementor, Xamarin.Estimote.Android, Version=1.0.8.7, Culture=neutral, PublicKeyToken=null;mono.com.estimote.sdk.Utils_RestartCompletedListenerImplementor
+EstimoteSdk.Utils.IRestartCompletedListenerImplementor;mono.com.estimote.sdk.Utils_RestartCompletedListenerImplementor
+mono.com.estimote.sdk.Utils_RestartCompletedListenerImplementor;mono.com.estimote.sdk.Utils_RestartCompletedListenerImplementor

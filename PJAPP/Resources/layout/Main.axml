@@ -4,8 +4,8 @@
     android:background="#F9F7EE"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:minWidth="300dp"
-    android:minHeight="400dp"
+    android:minWidth="25px"
+    android:minHeight="25px"
     android:weightSum="100">
     <ImageView
         android:src="@drawable/forside_logo"

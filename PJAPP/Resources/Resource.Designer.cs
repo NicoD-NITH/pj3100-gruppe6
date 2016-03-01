@@ -79,13 +79,19 @@ namespace PJAPP
 			public const int infoBoxStyle = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int sok = 2130837509;
+			public const int medalje16 = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int styleEditText = 2130837510;
+			public const int menuItemStyle = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int top_logo = 2130837511;
+			public const int sok = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int styleEditText = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int top_logo = 2130837513;
 			
 			static Drawable()
 			{
@@ -100,8 +106,14 @@ namespace PJAPP
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f07001b
+			public const int brukerInfo = 2131165211;
+			
 			// aapt resource value: 0x7f070009
 			public const int buttonWrap = 2131165193;
+			
+			// aapt resource value: 0x7f07001a
+			public const int gamificationInfo = 2131165210;
 			
 			// aapt resource value: 0x7f07000b
 			public const int glemtButton = 2131165195;
@@ -112,8 +124,26 @@ namespace PJAPP
 			// aapt resource value: 0x7f070006
 			public const int imageView1 = 2131165190;
 			
+			// aapt resource value: 0x7f07001e
+			public const int imageView2 = 2131165214;
+			
+			// aapt resource value: 0x7f070021
+			public const int imageView3 = 2131165217;
+			
 			// aapt resource value: 0x7f07000d
 			public const int infoBox = 2131165197;
+			
+			// aapt resource value: 0x7f070018
+			public const int linearLayout1 = 2131165208;
+			
+			// aapt resource value: 0x7f07001c
+			public const int linearLayout2 = 2131165212;
+			
+			// aapt resource value: 0x7f07001d
+			public const int linearLayout3 = 2131165213;
+			
+			// aapt resource value: 0x7f070020
+			public const int linearLayout4 = 2131165216;
 			
 			// aapt resource value: 0x7f070000
 			public const int listeHeader1 = 2131165184;
@@ -133,6 +163,12 @@ namespace PJAPP
 			// aapt resource value: 0x7f070015
 			public const int minProfilButton = 2131165205;
 			
+			// aapt resource value: 0x7f070019
+			public const int profilBilde = 2131165209;
+			
+			// aapt resource value: 0x7f070017
+			public const int profilInfo = 2131165207;
+			
 			// aapt resource value: 0x7f070001
 			public const int romListe1 = 2131165185;
 			
@@ -141,6 +177,12 @@ namespace PJAPP
 			
 			// aapt resource value: 0x7f07000e
 			public const int textView1 = 2131165198;
+			
+			// aapt resource value: 0x7f07001f
+			public const int textView2 = 2131165215;
+			
+			// aapt resource value: 0x7f070022
+			public const int textView3 = 2131165218;
 			
 			// aapt resource value: 0x7f07000c
 			public const int toolbar = 2131165196;
@@ -199,6 +241,12 @@ namespace PJAPP
 			
 			// aapt resource value: 0x7f030005
 			public const int menuDialog = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int profilSide = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int veileder = 2130903047;
 			
 			static Layout()
 			{

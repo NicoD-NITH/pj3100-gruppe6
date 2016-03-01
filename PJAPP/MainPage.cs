@@ -27,6 +27,7 @@ namespace PJAPP
 
             menuButton.Click += delegate
             {
+                var openMenu = new Intent(this, typeof(Menu));
                 StartActivity(typeof(Menu));
             };
         }

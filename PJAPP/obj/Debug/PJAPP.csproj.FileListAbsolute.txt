@@ -19,5 +19,17 @@ D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\values\styles.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\layout\menudialog.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\layout\mainpage.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\drawable\infoboxstyle.xml
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\layout\grupperom.xml
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\layout\menubar.xml
+D:\VSProj\TESTA\PJAPP\PJAPP\bin\Debug\Xamarin.Estimote.Android.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\drawable\top_logo.png
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\drawable\forside_logo.png
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\drawable\dropdown.png
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\drawable\sok.png
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\layout\grupperomrow.xml
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\layout\veileder.xml
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\layout\profilside.xml
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\drawable\medalje16.psd
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\drawable\menuitemstyle.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\PJAPP.dll.mdb
 D:\VSProj\TESTA\PJAPP\PJAPP\bin\Debug\PJAPP.dll.mdb
