@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using EstimoteSdk;
 
 namespace PJAPP
 {
@@ -16,7 +17,8 @@ namespace PJAPP
     {
         public int minor { get; set; }
         public int major { get; set; }
-        public double distance { get; set; }
+        //public double distance { get; set; }
         public string name { get; set; }
+        public Java.Util.UUID UUID { get; set; }
     }
 }

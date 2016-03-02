@@ -17,6 +17,7 @@
     </activity>
     <activity android:label="Menu" android:name="md59db0963bbf397043484a3f6db5cf9cc5.Menu" />
     <activity android:label="profilSide" android:name="md59db0963bbf397043484a3f6db5cf9cc5.profilSide" />
+    <activity android:label="RomDetalj" android:name="md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj" />
     <activity android:label="veilederSide" android:name="md59db0963bbf397043484a3f6db5cf9cc5.veilederSide" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="PJAPP.PJAPP.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->

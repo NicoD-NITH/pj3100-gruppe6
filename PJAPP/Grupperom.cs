@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -19,8 +20,8 @@ namespace PJAPP
         Region _region;
         ImageButton menuButton;
 
-        public List<RomBeacon> mNames;
-        public ListView mListView;
+        public List<RomBeacon> romListe;
+        public ListView romListView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -39,31 +40,10 @@ namespace PJAPP
             _region = new Region("SomeBeaconIdentifier", "b9407f30-f5f8-466e-aff9-25556b57fe6d");
 
             TextView listeHeader = FindViewById<TextView>(Resource.Id.listeHeader1);
-            /*
-            _beaconManager.SetBackgroundScanPeriod(2000, 0);
-            _beaconManager.EnteredRegion += (sender, e) =>
-            {
-                int numberOfBeacons = e.Beacons.Count;
-                if (numberOfBeacons == 0)
-                {
-                    listeHeader.Text = string.Format("Fant ingen rom i nærheten");
-                }
-                else
-                {
-                    listeHeader.Text = string.Format("Fant følgende {0} rom.", numberOfBeacons);
-                }
-
-                mListView = FindViewById<ListView>(Resource.Id.romListe1);
-                mNames = new List<string>();
-
-                for (int i = 0; i < numberOfBeacons; i++)
-                {
-                    mNames.Add(e.Beacons[i].Major + " " + e.Beacons[i].Minor + " Distance: " + calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi));
-                }
-                ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mNames);
-                mListView.Adapter = adapter;
-            */
+           
         }
+
+        
 
         protected static double calculateDistance(int txPower, double rssi)
         {
@@ -102,16 +82,51 @@ namespace PJAPP
                 {
                     listeHeader.Text = string.Format("Fant følgende {0} rom.", numberOfBeacons);
                 }
-                mListView = FindViewById<ListView>(Resource.Id.romListe1);
-                mNames = new List<RomBeacon>();
+                romListView = FindViewById<ListView>(Resource.Id.romListe1);
+                romListe = new List<RomBeacon>();
 
                 for (int i = 0; i < numberOfBeacons; i++)
                 {
-                    mNames.Add(new RomBeacon { minor = e.Beacons[i].Minor, major = e.Beacons[i].Major, distance = calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi), name = "rom" + i});
+                    //beacon 1 min: 29070, maj: 17476, UUID: b9407f30-f5f8-466e-aff9-25556b57fe6d
+                    //beacon 2: min: 7607, maj: 29066, UUID: b9407f30-f5f8-466e-aff9-25556b57fe6d
+                    //beacon 3: min: 985, maj: 43313, UUID: b9407f30-f5f8-466e-aff9-25556b57fe6d
+                    //beacon 4: min: 36063, maj: 37641, UUID: b9407f30-f5f8-466e-aff9-25556b57fe6d
+                    /*romListe.Add(newRomBeacon
+                      {
+                        minor = e.Beacons[i].Minor,
+                        major = e.Beacons[i].Major,
+                        ID = E.Beacons.[i].ProximityUUID
+                      });
+                      */
+                    romListe.Add(new RomBeacon
+                    {
+                        minor = e.Beacons[i].Minor,
+                        major = e.Beacons[i].Major,
+                        //distance = calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi),
+                        UUID = e.Beacons[i].ProximityUUID
+                    });
                 }
-                gruppeRomListAdapter adapter = new gruppeRomListAdapter(this, mNames);
+                foreach(RomBeacon b in romListe)
+                {
+                    if(b.minor == 29070 && b.major == 17476)
+                    {
+                        b.name = "Rom 39";
+                    } else if (b.minor == 7607 && b.major == 29066)
+                    {
+                        b.name = "Rom 38";
+                    } else if (b.minor == 985 && b.major == 43313)
+                    {
+                        b.name = "Rom 40";
+                    } else if (b.minor == 36063 && b.major == 37641)
+                    {
+                        b.name = "Rom 41";
+                    }
+                }
+
+                gruppeRomListAdapter adapter = new gruppeRomListAdapter(this, romListe);
                 //ArrayAdapter<RomBeacon> adapter = new ArrayAdapter<RomBeacon>(this, Android.Resource.Layout., mNames);
-                mListView.Adapter = adapter;
+                romListView.Adapter = adapter;
+                romListView.ItemClick += romListeClick;
             };
         }
         public void OnServiceReady()
@@ -123,5 +138,20 @@ namespace PJAPP
             _beaconManager.Disconnect();
             base.OnDestroy();
         }
+        private void romListeClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            int minor = romListe[e.Position].minor;
+            int major = romListe[e.Position].major;
+            string ID = romListe[e.Position].UUID.ToString();
+            string name = romListe[e.Position].name;
+
+            var romDetaljIntent = new Intent(this, typeof(RomDetalj));
+            romDetaljIntent.PutExtra("minor", minor);
+            romDetaljIntent.PutExtra("major", major);
+            romDetaljIntent.PutExtra("ID", ID);
+            romDetaljIntent.PutExtra("name", name);
+            StartActivity(romDetaljIntent);
+        }
+
     }
 }

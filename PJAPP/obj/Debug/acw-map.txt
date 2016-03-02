@@ -22,6 +22,10 @@ PJAPP.profilSide, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.profilSide
 PJAPP.profilSide, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.profilSide
 PJAPP.profilSide;md59db0963bbf397043484a3f6db5cf9cc5.profilSide
 pjapp.profilSide;md59db0963bbf397043484a3f6db5cf9cc5.profilSide
+PJAPP.RomDetalj, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj
+PJAPP.RomDetalj, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj
+PJAPP.RomDetalj;md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj
+pjapp.RomDetalj;md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj
 PJAPP.veilederSide, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.veilederSide
 PJAPP.veilederSide, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.veilederSide
 PJAPP.veilederSide;md59db0963bbf397043484a3f6db5cf9cc5.veilederSide

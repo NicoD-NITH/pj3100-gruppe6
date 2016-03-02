@@ -49,6 +49,7 @@ public final class R {
         public static final int profilBilde=0x7f070019;
         public static final int profilInfo=0x7f070017;
         public static final int romListe1=0x7f070001;
+        public static final int romNavn=0x7f070023;
         public static final int searchButton=0x7f070012;
         public static final int textView1=0x7f07000e;
         public static final int textView2=0x7f07001f;
@@ -71,7 +72,8 @@ public final class R {
         public static final int menubar=0x7f030004;
         public static final int menudialog=0x7f030005;
         public static final int profilside=0x7f030006;
-        public static final int veileder=0x7f030007;
+        public static final int romdetalj=0x7f030007;
+        public static final int veileder=0x7f030008;
     }
     public static final class string {
         public static final int ApplicationName=0x7f050001;

@@ -172,6 +172,9 @@ namespace PJAPP
 			// aapt resource value: 0x7f070001
 			public const int romListe1 = 2131165185;
 			
+			// aapt resource value: 0x7f070023
+			public const int romNavn = 2131165219;
+			
 			// aapt resource value: 0x7f070012
 			public const int searchButton = 2131165202;
 			
@@ -246,7 +249,10 @@ namespace PJAPP
 			public const int profilSide = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int veileder = 2130903047;
+			public const int romDetalj = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int veileder = 2130903048;
 			
 			static Layout()
 			{
