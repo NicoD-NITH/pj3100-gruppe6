@@ -79,19 +79,22 @@ namespace PJAPP
 			public const int infoBoxStyle = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int medalje16 = 2130837509;
+			public const int infoTextStyle = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int menuItemStyle = 2130837510;
+			public const int medalje16 = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int sok = 2130837511;
+			public const int menuItemStyle = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int styleEditText = 2130837512;
+			public const int sok = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int top_logo = 2130837513;
+			public const int styleEditText = 2130837513;
+			
+			// aapt resource value: 0x7f02000a
+			public const int top_logo = 2130837514;
 			
 			static Drawable()
 			{
@@ -105,6 +108,9 @@ namespace PJAPP
 		
 		public partial class Id
 		{
+			
+			// aapt resource value: 0x7f070025
+			public const int Whiteboard = 2131165221;
 			
 			// aapt resource value: 0x7f07001b
 			public const int brukerInfo = 2131165211;
@@ -169,6 +175,9 @@ namespace PJAPP
 			// aapt resource value: 0x7f070017
 			public const int profilInfo = 2131165207;
 			
+			// aapt resource value: 0x7f070026
+			public const int prosjektor = 2131165222;
+			
 			// aapt resource value: 0x7f070001
 			public const int romListe1 = 2131165185;
 			
@@ -177,6 +186,9 @@ namespace PJAPP
 			
 			// aapt resource value: 0x7f070012
 			public const int searchButton = 2131165202;
+			
+			// aapt resource value: 0x7f070024
+			public const int storrelse = 2131165220;
 			
 			// aapt resource value: 0x7f07000e
 			public const int textView1 = 2131165198;

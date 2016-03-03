@@ -20,13 +20,15 @@ public final class R {
         public static final int forside_logo=0x7f020002;
         public static final int icon=0x7f020003;
         public static final int infoboxstyle=0x7f020004;
-        public static final int medalje16=0x7f020005;
-        public static final int menuitemstyle=0x7f020006;
-        public static final int sok=0x7f020007;
-        public static final int styleedittext=0x7f020008;
-        public static final int top_logo=0x7f020009;
+        public static final int infotextstyle=0x7f020005;
+        public static final int medalje16=0x7f020006;
+        public static final int menuitemstyle=0x7f020007;
+        public static final int sok=0x7f020008;
+        public static final int styleedittext=0x7f020009;
+        public static final int top_logo=0x7f02000a;
     }
     public static final class id {
+        public static final int Whiteboard=0x7f070025;
         public static final int brukerInfo=0x7f07001b;
         public static final int buttonWrap=0x7f070009;
         public static final int gamificationInfo=0x7f07001a;
@@ -48,9 +50,11 @@ public final class R {
         public static final int minProfilButton=0x7f070015;
         public static final int profilBilde=0x7f070019;
         public static final int profilInfo=0x7f070017;
+        public static final int prosjektor=0x7f070026;
         public static final int romListe1=0x7f070001;
         public static final int romNavn=0x7f070023;
         public static final int searchButton=0x7f070012;
+        public static final int storrelse=0x7f070024;
         public static final int textView1=0x7f07000e;
         public static final int textView2=0x7f07001f;
         public static final int textView3=0x7f070022;

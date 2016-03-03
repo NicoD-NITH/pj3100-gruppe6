@@ -28,7 +28,7 @@
         android:minHeight="25px"
         android:layout_weight="80"
         android:layout_width="match_parent"
-        android:layout_height="0"
+        android:layout_height="0dp"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -36,21 +36,30 @@
         android:id="@+id/linearLayout1">
         <TextView
             android:text="Text"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/infoTextStyle"
-            android:id="@+id/textView1" />
+            android:id="@+id/storrelse"
+            android:textColor="#000" />
         <TextView
             android:text="Text"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/infoTextStyle"
-            android:id="@+id/textView2" />
+            android:id="@+id/Whiteboard"
+            android:textColor="#000" />
         <TextView
             android:text="Text"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/infoTextStyle"
-            android:id="@+id/textView3" />
+            android:id="@+id/prosjektor"
+            android:textColor="#000" />
     </LinearLayout>
 </LinearLayout>
