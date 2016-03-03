@@ -15,6 +15,8 @@ namespace PJAPP
     [Activity(Label = "RomDetalj")]
     public class RomDetalj : Activity
     {
+        ImageButton mainMenu;
+        ImageButton menuButton;
         TextView romNavn;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,6 +31,18 @@ namespace PJAPP
 
             romNavn = FindViewById<TextView>(Resource.Id.romNavn);
             romNavn.Text = name;
+
+            mainMenu = FindViewById<ImageButton>(Resource.Id.westerdalsLogo);
+            menuButton = FindViewById<ImageButton>(Resource.Id.menuButton);
+
+            mainMenu.Click += delegate
+            {
+                StartActivity(typeof(MainPage));
+            };
+            menuButton.Click += delegate
+            {
+                StartActivity(typeof(Menu));
+            };
         }
         protected override void OnResume()
         {

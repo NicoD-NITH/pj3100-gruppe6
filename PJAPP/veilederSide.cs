@@ -16,17 +16,23 @@ namespace PJAPP
     public class veilederSide : Activity
     {
         ImageButton menuButton;
+        ImageButton mainPage;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             this.RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.veileder);
 
+            mainPage = FindViewById<ImageButton>(Resource.Id.westerdalsLogo);
             menuButton = FindViewById<ImageButton>(Resource.Id.menuButton);
 
             menuButton.Click += delegate
             {
                 StartActivity(typeof(Menu));
+            };
+            mainPage.Click += delegate
+            {
+                StartActivity(typeof(MainPage));
             };
         }
     }

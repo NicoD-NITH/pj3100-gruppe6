@@ -19,6 +19,7 @@ namespace PJAPP
         private Button veileder;
         private Button minProfil;
         private Button loggUt;
+        ImageButton mainPage;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,6 +32,7 @@ namespace PJAPP
             veileder = FindViewById<Button>(Resource.Id.veilederButton);
             minProfil = FindViewById<Button>(Resource.Id.minProfilButton);
             loggUt = FindViewById<Button>(Resource.Id.loggUtButton);
+            mainPage = FindViewById<ImageButton>(Resource.Id.westerdalsLogo);
 
             grupperom.Click += delegate
             {
@@ -51,7 +53,10 @@ namespace PJAPP
             {
                 StartActivity(typeof(MainActivity));
             };
-
+            mainPage.Click += delegate
+            {
+                StartActivity(typeof(MainPage));
+            };
         }
     }
 }

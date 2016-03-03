@@ -19,6 +19,7 @@ namespace PJAPP
         BeaconManager _beaconManager;
         Region _region;
         ImageButton menuButton;
+        ImageButton mainPage;
 
         public List<RomBeacon> romListe;
         public ListView romListView;
@@ -30,10 +31,15 @@ namespace PJAPP
             SetContentView(Resource.Layout.gruppeRom);
 
             menuButton = FindViewById<ImageButton>(Resource.Id.menuButton);
+            mainPage = FindViewById<ImageButton>(Resource.Id.westerdalsLogo);
 
             menuButton.Click += delegate
             {
                 StartActivity(typeof(Menu));
+            };
+            mainPage.Click += delegate
+            {
+                StartActivity(typeof(MainPage));
             };
 
             _beaconManager = new BeaconManager(this);
