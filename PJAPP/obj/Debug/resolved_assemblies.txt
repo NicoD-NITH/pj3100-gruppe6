@@ -1,6 +1,7 @@
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\PJAPP.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\Mono.Android.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\mscorlib.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\Newtonsoft.Json.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.Core.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.Xml.dll

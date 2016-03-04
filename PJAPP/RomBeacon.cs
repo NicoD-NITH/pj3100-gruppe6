@@ -15,10 +15,11 @@ namespace PJAPP
 {
     public class RomBeacon
     {
-        public int minor { get; set; }
-        public int major { get; set; }
+        public string BeaconUUID { get; set; }
+        public int BeaconMajor { get; set; }
+        public int BeaconMinor { get; set; }
+        
         //public double distance { get; set; }
-        public string name { get; set; }
-        public Java.Util.UUID UUID { get; set; }
+        public string RomNavn { get; set; }
     }
 }

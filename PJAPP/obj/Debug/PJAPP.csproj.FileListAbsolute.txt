@@ -33,5 +33,7 @@ D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\drawable\medalje16.psd
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\drawable\menuitemstyle.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\layout\romdetalj.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\drawable\infotextstyle.xml
+D:\VSProj\TESTA\PJAPP\PJAPP\bin\Debug\Newtonsoft.Json.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\bin\Debug\Newtonsoft.Json.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\PJAPP.dll.mdb
 D:\VSProj\TESTA\PJAPP\PJAPP\bin\Debug\PJAPP.dll.mdb

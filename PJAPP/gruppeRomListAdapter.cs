@@ -62,7 +62,7 @@ namespace PJAPP
             txtDistance.Text = mItems[position].distance.ToString() + "m";*/
 
             TextView txtName = row.FindViewById<TextView>(Resource.Id.txtName);
-            txtName.Text = mItems[position].name;
+            txtName.Text = mItems[position].RomNavn;
 
             return row;
         }
