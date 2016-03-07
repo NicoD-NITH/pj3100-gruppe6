@@ -28,26 +28,26 @@
         android:id="@+id/txtMajor"
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
+        android:paddingBottom="2dp" />-->
+    <TextView
+        android:text="Name"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_weight="30"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtName"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
         android:paddingBottom="2dp" />
     <TextView
         android:text="Distance"
         android:textColor="#000000"
         android:textSize="30sp"
         android:layout_width="match_parent"
-        android:layout_weight="25"
+        android:layout_weight="70"
         android:layout_height="wrap_content"
         android:id="@+id/txtDistance"
-        android:paddingLeft="2dp"
-        android:paddingRight="2dp"
-        android:paddingBottom="2dp" /> -->
-    <TextView
-        android:text="Name"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        android:layout_width="match_parent"
-        android:layout_weight="25"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtName"
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
         android:paddingBottom="2dp" />

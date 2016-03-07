@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
+
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -12,6 +14,7 @@ using Android.Widget;
 using EstimoteSdk;
 using System.Net;
 using Newtonsoft.Json;
+using Java.Lang;
 
 namespace PJAPP
 {
@@ -26,11 +29,13 @@ namespace PJAPP
         private WebClient roomClient;
         private Uri servURL;
 
+        public Handler mHandler = new Handler();
 
         public List<RomBeacon> romListeDB;
         public List<RomBeacon> romListe;
         public List<RomBeacon> romListeFinal;
         public ListView romListView;
+        public gruppeRomListAdapter adapter;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -40,6 +45,7 @@ namespace PJAPP
 
             menuButton = FindViewById<ImageButton>(Resource.Id.menuButton);
             mainPage = FindViewById<ImageButton>(Resource.Id.westerdalsLogo);
+            
 
             menuButton.Click += delegate
             {
@@ -81,7 +87,8 @@ namespace PJAPP
                     {
                         BeaconUUID = e.Beacons[i].ProximityUUID.ToString(),
                         BeaconMajor = e.Beacons[i].Major,
-                        BeaconMinor = e.Beacons[i].Minor
+                        BeaconMinor = e.Beacons[i].Minor,
+                        distance = calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi)
                     });
                 }
             };
@@ -96,9 +103,6 @@ namespace PJAPP
             {
                 string json = Encoding.UTF8.GetString(e.Result);
                 romListeDB = JsonConvert.DeserializeObject<List<RomBeacon>>(json);
-                /*gruppeRomListAdapter adapter = new gruppeRomListAdapter(this, romListeDB);
-                romListView.Adapter = adapter;
-                romListView.ItemClick += romListeClick;*/
             });
         }
 
@@ -112,22 +116,23 @@ namespace PJAPP
             double ratio = rssi * 1.0 / txPower;
             if (ratio < 1.0)
             {
-                return Math.Round(Math.Pow(ratio, 10), 2);
+                return System.Math.Round(System.Math.Pow(ratio, 10), 2);
             }
             else
             {
-                double accuracy = (0.89976) * Math.Pow(ratio, 7.7095) + 0.111;
-                return Math.Round(accuracy, 2);
+                double accuracy = (0.89976) * System.Math.Pow(ratio, 7.7095) + 0.111;
+                return System.Math.Round(accuracy, 2);
             }
         }
         protected override void OnResume()
         {
             base.OnResume();
             _beaconManager.Connect(this);
-
+            
             TextView listeHeader = FindViewById<TextView>(Resource.Id.listeHeader1);
 
-            _beaconManager.SetBackgroundScanPeriod(2000, 0);
+            
+            _beaconManager.SetBackgroundScanPeriod(2000, 200);
             _beaconManager.EnteredRegion += (sender, e) =>
             {
 
@@ -145,39 +150,49 @@ namespace PJAPP
 
                 for (int i = 0; i < numberOfBeacons; i++)
                 {
-                    //beacon 1 min: 29070, maj: 17476, UUID: b9407f30-f5f8-466e-aff9-25556b57fe6d
-                    //beacon 2: min: 7607, maj: 29066, UUID: b9407f30-f5f8-466e-aff9-25556b57fe6d
-                    //beacon 3: min: 985, maj: 43313, UUID: b9407f30-f5f8-466e-aff9-25556b57fe6d
-                    //beacon 4: min: 36063, maj: 37641, UUID: b9407f30-f5f8-466e-aff9-25556b57fe6d
 
                     romListe.Add(new RomBeacon
                     {
                         BeaconUUID = e.Beacons[i].ProximityUUID.ToString(),
                         BeaconMajor = e.Beacons[i].Major,
-                        BeaconMinor = e.Beacons[i].Minor
-                        //distance = calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi),
+                        BeaconMinor = e.Beacons[i].Minor,
+                        distance = calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi)
+                        //,
                     });
                 }
-                foreach(RomBeacon b in romListeDB) {
-                    foreach(RomBeacon b2 in romListe)
+                if (!(romListeDB.Count <= 0))
+                {
+                    foreach (RomBeacon b in romListeDB)
                     {
-                        if(romListeFinal.Count <= romListe.Count)
+                        foreach (RomBeacon b2 in romListe)
                         {
-                            if (b.BeaconUUID == b2.BeaconUUID && b.BeaconMajor == b2.BeaconMajor && b.BeaconMinor == b2.BeaconMinor)
+                            if (romListeFinal.Count <= romListe.Count)
                             {
-                                romListeFinal.Add(b);
+                                if (b.BeaconUUID == b2.BeaconUUID && b.BeaconMajor == b2.BeaconMajor && b.BeaconMinor == b2.BeaconMinor)
+                                {
+                                    b.distance = b2.distance;
+                                }
                             }
                         }
                     }
                 }
-                gruppeRomListAdapter adapter = new gruppeRomListAdapter(this, romListeFinal);
-                romListView.Adapter = adapter;
-                romListView.ItemClick += romListeClick;
-                
-                //ArrayAdapter<RomBeacon> adapter = new ArrayAdapter<RomBeacon>(this, Android.Resource.Layout., mNames);
 
+                if (!(romListeDB.Count <= 0))
+                {
+                    adapter = new gruppeRomListAdapter(this, romListeDB);
+                    romListView.Adapter = adapter;
+                    romListView.ItemClick += romListeClick;
+                }
             };
+
+            /*Runnable listUpdater = new Runnable(() =>
+                    {
+                        adapter.NotifyDataSetChanged();
+                    });
+                    mHandler.PostDelayed(listUpdater, 500);*/
+
         }
+
         public void OnServiceReady()
         {
             _beaconManager.StartMonitoring(_region);
@@ -189,10 +204,10 @@ namespace PJAPP
         }
         private void romListeClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            int minor = romListeFinal[e.Position].BeaconMinor;
-            int major = romListeFinal[e.Position].BeaconMajor;
-            string ID = romListeFinal[e.Position].BeaconUUID;
-            string name = romListeFinal[e.Position].RomNavn;
+            int minor = romListeDB[e.Position].BeaconMinor;
+            int major = romListeDB[e.Position].BeaconMajor;
+            string ID = romListeDB[e.Position].BeaconUUID;
+            string name = romListeDB[e.Position].RomNavn;
 
             var romDetaljIntent = new Intent(this, typeof(RomDetalj));
             romDetaljIntent.PutExtra("minor", minor);
@@ -201,6 +216,6 @@ namespace PJAPP
             romDetaljIntent.PutExtra("name", name);
             StartActivity(romDetaljIntent);
         }
-
+        
     }
 }

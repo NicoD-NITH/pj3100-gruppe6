@@ -11,7 +11,7 @@ using Android.Widget;
 
 namespace PJAPP
 {
-    class gruppeRomListAdapter : BaseAdapter<PJAPP.RomBeacon>
+    public class gruppeRomListAdapter : BaseAdapter<PJAPP.RomBeacon>
     {
         private List<PJAPP.RomBeacon> mItems;
         private Context mContext;
@@ -57,9 +57,9 @@ namespace PJAPP
 
             TextView txtMajor = row.FindViewById<TextView>(Resource.Id.txtMajor);
             txtMajor.Text = mItems[position].major.ToString();
-
-            TextView txtDistance= row.FindViewById<TextView>(Resource.Id.txtDistance);
-            txtDistance.Text = mItems[position].distance.ToString() + "m";*/
+            */
+            TextView txtDistance = row.FindViewById<TextView>(Resource.Id.txtDistance);
+            txtDistance.Text = mItems[position].distance.ToString() + "m";
 
             TextView txtName = row.FindViewById<TextView>(Resource.Id.txtName);
             txtName.Text = mItems[position].RomNavn;
