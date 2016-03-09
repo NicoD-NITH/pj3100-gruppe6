@@ -5,6 +5,10 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.Net;
+using System.Text;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace PJAPP
 {
@@ -14,6 +18,9 @@ namespace PJAPP
     {
         private Button loggInnButton;
 
+        static string sendText1;
+        static string sendText2;
+
         protected override void OnCreate(Bundle bundle)
         {
             this.RequestWindowFeature(WindowFeatures.NoTitle);
@@ -21,13 +28,91 @@ namespace PJAPP
             SetContentView(Resource.Layout.Main);
 
             loggInnButton = FindViewById<Button>(Resource.Id.loggInnButton);
+            EditText editText1 = FindViewById<EditText>(Resource.Id.txtEmail);
+            EditText editText2 = FindViewById<EditText>(Resource.Id.txtPassword);
 
             loggInnButton.Click += delegate
             {
-                StartActivity(typeof(MainPage));
+                sendText1 = editText1.Text;
+                sendText2 = editText2.Text;
+                if (SendToPhp())
+                {
+                    StartActivity(typeof(MainPage));
+                }
+                else
+                {
+                    Toast msg = Toast.MakeText(this, "Feil passord/brukernavn", ToastLength.Long);
+                    msg.Show();
+                }
             };
-           
+
+        }
+        public class data
+        {
+            public string df_text1 { get; set; }
+            public string df_text2 { get; set; }
+        }
+
+        private bool SendToPhp()
+        {
+            try
+            {
+                data DataObj = new data();
+                DataObj.df_text1 = sendText1;
+                DataObj.df_text2 = sendText2;
+
+                /*Toast datatext1 = Toast.MakeText(this, DataObj.df_text2, ToastLength.Long);
+                datatext1.Show();*/
+                string JSONString = JsonConvert.SerializeObject(DataObj, Formatting.None);
+               /* Toast dataO = Toast.MakeText(this, JSONString, ToastLength.Long);
+                dataO.Show();*/
+
+                string url = "http://pj3100.somee.com/Logintest.php";
+
+                HttpWebRequest newRequest = (HttpWebRequest)WebRequest.Create(url);
+
+                newRequest.Method = "POST";
+
+                string postData = JSONString;
+
+                byte[] pdata = Encoding.UTF8.GetBytes(postData);
+
+                newRequest.ContentType = "application/x-www-form-urlencoded";
+                newRequest.ContentLength = pdata.Length;
+
+                Stream myStream = newRequest.GetRequestStream();
+                myStream.Write(pdata, 0, pdata.Length);
+
+                WebResponse myResponse = newRequest.GetResponse();
+
+                Stream responseStream = myResponse.GetResponseStream();
+
+                StreamReader streamReader = new StreamReader(responseStream);
+
+                string result = streamReader.ReadToEnd();
+
+                
+                streamReader.Close();
+                responseStream.Close();
+                myStream.Close();
+
+                if (result.Equals("1"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (WebException ex)
+            {
+                string _exception = ex.ToString();
+                Toast error = Toast.MakeText(this, _exception, ToastLength.Long);
+                error.Show();
+                Console.WriteLine("--->" + _exception);
+                return false;
+            }
         }
     }
 }
-

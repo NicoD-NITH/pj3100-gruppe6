@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 
 
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -66,7 +65,7 @@ namespace PJAPP
 
             romListe = new List<RomBeacon>();
             romListeFinal = new List<RomBeacon>();
-
+            //rom45 58592 32436
 
             _beaconManager.SetBackgroundScanPeriod(2000, 0);
             _beaconManager.EnteredRegion += (sender, e) =>
@@ -130,12 +129,9 @@ namespace PJAPP
             _beaconManager.Connect(this);
             
             TextView listeHeader = FindViewById<TextView>(Resource.Id.listeHeader1);
-
-            
             _beaconManager.SetBackgroundScanPeriod(2000, 200);
             _beaconManager.EnteredRegion += (sender, e) =>
             {
-
                 int numberOfBeacons = e.Beacons.Count;
                 if (numberOfBeacons == 0)
                 {
@@ -150,7 +146,6 @@ namespace PJAPP
 
                 for (int i = 0; i < numberOfBeacons; i++)
                 {
-
                     romListe.Add(new RomBeacon
                     {
                         BeaconUUID = e.Beacons[i].ProximityUUID.ToString(),
@@ -208,14 +203,17 @@ namespace PJAPP
             int major = romListeDB[e.Position].BeaconMajor;
             string ID = romListeDB[e.Position].BeaconUUID;
             string name = romListeDB[e.Position].RomNavn;
-
+            int prosjektor = romListeDB[e.Position].HarProsjektor;
+            int plasser = romListeDB[e.Position].Plasser;
             var romDetaljIntent = new Intent(this, typeof(RomDetalj));
             romDetaljIntent.PutExtra("minor", minor);
             romDetaljIntent.PutExtra("major", major);
             romDetaljIntent.PutExtra("ID", ID);
             romDetaljIntent.PutExtra("name", name);
+            romDetaljIntent.PutExtra("prosjektor", prosjektor);
+            romDetaljIntent.PutExtra("plasser", plasser);
             StartActivity(romDetaljIntent);
+            OnDestroy();
         }
-        
     }
 }
