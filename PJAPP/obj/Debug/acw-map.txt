@@ -26,6 +26,10 @@ PJAPP.RomDetalj, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj
 PJAPP.RomDetalj, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj
 PJAPP.RomDetalj;md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj
 pjapp.RomDetalj;md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj
+PJAPP.veilederListAdapter, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.veilederListAdapter
+PJAPP.veilederListAdapter, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.veilederListAdapter
+PJAPP.veilederListAdapter;md59db0963bbf397043484a3f6db5cf9cc5.veilederListAdapter
+pjapp.veilederListAdapter;md59db0963bbf397043484a3f6db5cf9cc5.veilederListAdapter
 PJAPP.veilederSide, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.veilederSide
 PJAPP.veilederSide, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.veilederSide
 PJAPP.veilederSide;md59db0963bbf397043484a3f6db5cf9cc5.veilederSide

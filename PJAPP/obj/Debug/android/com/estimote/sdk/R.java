@@ -28,7 +28,6 @@ public final class R {
         public static final int top_logo=0x7f02000a;
     }
     public static final class id {
-        public static final int Whiteboard=0x7f070023;
         public static final int brukerInfo=0x7f070019;
         public static final int buttonWrap=0x7f070007;
         public static final int gamificationInfo=0x7f070018;
@@ -48,22 +47,27 @@ public final class R {
         public static final int menuBar=0x7f07000d;
         public static final int menuButton=0x7f07000e;
         public static final int minProfilButton=0x7f070013;
+        public static final int plasser1=0x7f070022;
+        public static final int plasser2=0x7f070024;
         public static final int profilBilde=0x7f070017;
         public static final int profilInfo=0x7f070015;
-        public static final int prosjektor=0x7f070024;
+        public static final int prosjektor1=0x7f070023;
+        public static final int prosjektor2=0x7f070025;
         public static final int romListe1=0x7f070001;
         public static final int romNavn=0x7f070021;
         public static final int searchButton=0x7f070010;
-        public static final int storrelse=0x7f070022;
         public static final int textView1=0x7f07000c;
         public static final int textView2=0x7f07001d;
         public static final int textView3=0x7f070020;
         public static final int toolbar=0x7f07000a;
         public static final int txtDistance=0x7f070003;
         public static final int txtEmail=0x7f070005;
+        public static final int txtFag=0x7f070028;
         public static final int txtName=0x7f070002;
+        public static final int txtNavn=0x7f070027;
         public static final int txtPassword=0x7f070006;
         public static final int veilederButton=0x7f070012;
+        public static final int veilederView=0x7f070026;
         public static final int westerdalsLogo=0x7f07000f;
     }
     public static final class layout {
@@ -76,6 +80,7 @@ public final class R {
         public static final int profilside=0x7f030006;
         public static final int romdetalj=0x7f030007;
         public static final int veileder=0x7f030008;
+        public static final int veilederrow=0x7f030009;
     }
     public static final class string {
         public static final int ApplicationName=0x7f050001;

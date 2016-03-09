@@ -203,8 +203,9 @@ namespace PJAPP
             int major = romListeDB[e.Position].BeaconMajor;
             string ID = romListeDB[e.Position].BeaconUUID;
             string name = romListeDB[e.Position].RomNavn;
-            int prosjektor = romListeDB[e.Position].HarProsjektor;
+            string prosjektor = romListeDB[e.Position].HarProsjektor;
             int plasser = romListeDB[e.Position].Plasser;
+
             var romDetaljIntent = new Intent(this, typeof(RomDetalj));
             romDetaljIntent.PutExtra("minor", minor);
             romDetaljIntent.PutExtra("major", major);

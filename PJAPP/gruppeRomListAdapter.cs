@@ -52,12 +52,6 @@ namespace PJAPP
                 row = LayoutInflater.From(mContext).Inflate(PJAPP.Resource.Layout.gruppeRomRow, null, false);
             }
 
-            /*TextView txtMinor = row.FindViewById<TextView>(Resource.Id.txtMinor);
-            txtMinor.Text = mItems[position].minor.ToString();
-
-            TextView txtMajor = row.FindViewById<TextView>(Resource.Id.txtMajor);
-            txtMajor.Text = mItems[position].major.ToString();
-            */
             TextView txtDistance = row.FindViewById<TextView>(Resource.Id.txtDistance);
             txtDistance.Text = mItems[position].distance.ToString() + "m";
 

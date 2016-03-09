@@ -21,9 +21,8 @@ namespace PJAPP
         ImageButton mainMenu;
         ImageButton menuButton;
         TextView romNavn;
-        TextView storrelse;
+        TextView plasser;
         TextView prosjektor;
-        TextView info3;
 
         /*private WebClient roomClient;
         private Uri servURL;*/
@@ -40,13 +39,13 @@ namespace PJAPP
             string ID = Intent.GetStringExtra("ID") ?? "Data not available";
 
             int storrelseText = Intent.GetIntExtra("plasser", 0);
-            int prosjektorText = Intent.GetIntExtra("prosjektor", 0);
+            string prosjektorText = Intent.GetStringExtra("prosjektor") ?? "Data not available";
 
             romNavn = FindViewById<TextView>(Resource.Id.romNavn);
-            storrelse = FindViewById<TextView>(Resource.Id.storrelse);
-            prosjektor = FindViewById<TextView>(Resource.Id.prosjektor);
+            plasser = FindViewById<TextView>(Resource.Id.plasser2);
+            prosjektor = FindViewById<TextView>(Resource.Id.prosjektor2);
             romNavn.Text = name;
-            storrelse.Text = storrelseText.ToString();
+            plasser.Text = storrelseText.ToString();
             prosjektor.Text = prosjektorText.ToString();
 
             mainMenu = FindViewById<ImageButton>(Resource.Id.westerdalsLogo);

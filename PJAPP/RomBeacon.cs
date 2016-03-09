@@ -19,7 +19,7 @@ namespace PJAPP
         public int BeaconMajor { get; set; }
         public int BeaconMinor { get; set; } 
         public string RomNavn { get; set; }
-        public int HarProsjektor { get; set; }
+        public string HarProsjektor { get; set; }
         public int Plasser { get; set; }
         public double distance { get; set; }
     }

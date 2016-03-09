@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="@drawable/infoBoxStyle"
+    android:weightSum="100">
+    <TextView
+        android:text="Name"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_weight="35"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtNavn"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingBottom="2dp" />
+    <TextView
+        android:text="Distance"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_weight="65"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFag"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingBottom="2dp" />
+</LinearLayout>
