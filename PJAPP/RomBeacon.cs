@@ -21,6 +21,7 @@ namespace PJAPP
         public string RomNavn { get; set; }
         public string HarProsjektor { get; set; }
         public int Plasser { get; set; }
+        public int IsBookable { get; set; }
         public double distance { get; set; }
     }
 }

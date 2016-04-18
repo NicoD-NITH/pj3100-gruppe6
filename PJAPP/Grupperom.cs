@@ -32,7 +32,6 @@ namespace PJAPP
 
         public List<RomBeacon> romListeDB;
         public List<RomBeacon> romListe;
-        public List<RomBeacon> romListeFinal;
         public ListView romListView;
         public gruppeRomListAdapter adapter;
 
@@ -58,27 +57,25 @@ namespace PJAPP
             _beaconManager = new BeaconManager(this);
             _region = new Region("SomeBeaconIdentifier", "b9407f30-f5f8-466e-aff9-25556b57fe6d");
 
-            TextView listeHeader = FindViewById<TextView>(Resource.Id.listeHeader1);
+            //TextView listeHeader = FindViewById<TextView>(Resource.Id.listeHeader1);
             romListView = FindViewById<ListView>(Resource.Id.romListe1);
             roomClient = new WebClient();
             servURL = new Uri("http://pj3100.somee.com/GetRooms.php");
 
             romListe = new List<RomBeacon>();
-            romListeFinal = new List<RomBeacon>();
-            //rom45 58592 32436
 
             _beaconManager.SetBackgroundScanPeriod(2000, 0);
             _beaconManager.EnteredRegion += (sender, e) =>
             {
                 int numberOfBeacons = e.Beacons.Count;
-                if (numberOfBeacons == 0)
+                /*if (numberOfBeacons == 0)
                 {
                     listeHeader.Text = string.Format("Fant ingen rom i nærheten");
                 }
                 else
                 {
                     listeHeader.Text = string.Format("Fant følgende {0} rom.", numberOfBeacons);
-                }
+                }*/
                 for (int i = 0; i < numberOfBeacons; i++)
                 {
 
@@ -128,19 +125,19 @@ namespace PJAPP
             base.OnResume();
             _beaconManager.Connect(this);
             
-            TextView listeHeader = FindViewById<TextView>(Resource.Id.listeHeader1);
+            //TextView listeHeader = FindViewById<TextView>(Resource.Id.listeHeader1);
             _beaconManager.SetBackgroundScanPeriod(2000, 200);
             _beaconManager.EnteredRegion += (sender, e) =>
             {
                 int numberOfBeacons = e.Beacons.Count;
-                if (numberOfBeacons == 0)
+                /*if (numberOfBeacons == 0)
                 {
                     listeHeader.Text = string.Format("Fant ingen rom i nærheten");
                 }
                 else
                 {
                     listeHeader.Text = string.Format("Fant følgende {0} rom.", numberOfBeacons);
-                }
+                }*/
                
                 romListe = new List<RomBeacon>();
 
@@ -161,13 +158,13 @@ namespace PJAPP
                     {
                         foreach (RomBeacon b2 in romListe)
                         {
-                            if (romListeFinal.Count <= romListe.Count)
-                            {
+                            /*if (romListeFinal.Count <= romListe.Count)
+                            {*/
                                 if (b.BeaconUUID == b2.BeaconUUID && b.BeaconMajor == b2.BeaconMajor && b.BeaconMinor == b2.BeaconMinor)
                                 {
                                     b.distance = b2.distance;
                                 }
-                            }
+                            //}
                         }
                     }
                 }
@@ -205,6 +202,7 @@ namespace PJAPP
             string name = romListeDB[e.Position].RomNavn;
             string prosjektor = romListeDB[e.Position].HarProsjektor;
             int plasser = romListeDB[e.Position].Plasser;
+            int isBookable = romListeDB[e.Position].IsBookable;
 
             var romDetaljIntent = new Intent(this, typeof(RomDetalj));
             romDetaljIntent.PutExtra("minor", minor);
@@ -213,6 +211,7 @@ namespace PJAPP
             romDetaljIntent.PutExtra("name", name);
             romDetaljIntent.PutExtra("prosjektor", prosjektor);
             romDetaljIntent.PutExtra("plasser", plasser);
+            romDetaljIntent.PutExtra("isBookable", isBookable);
             StartActivity(romDetaljIntent);
             OnDestroy();
         }

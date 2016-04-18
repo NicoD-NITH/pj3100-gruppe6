@@ -12,6 +12,10 @@ using Android.Widget;
 using System.Net;
 using Newtonsoft.Json;
 using System.IO;
+using Java.Util;
+using Android.Text.Format;
+using Java.Text;
+using System.Globalization;
 
 namespace PJAPP
 {
@@ -23,6 +27,11 @@ namespace PJAPP
         TextView romNavn;
         TextView plasser;
         TextView prosjektor;
+        TextView reserver;
+        Button reserverButton;
+        string name;
+        string time;
+        DateTime currentDate;
 
         /*private WebClient roomClient;
         private Uri servURL;*/
@@ -35,18 +44,39 @@ namespace PJAPP
 
             int minor = Intent.GetIntExtra("minor" , 0);
             int major = Intent.GetIntExtra("major", 0);
-            string name = Intent.GetStringExtra("name") ?? "Data not available";
+            name = Intent.GetStringExtra("name") ?? "Data not available";
             string ID = Intent.GetStringExtra("ID") ?? "Data not available";
 
             int storrelseText = Intent.GetIntExtra("plasser", 0);
             string prosjektorText = Intent.GetStringExtra("prosjektor") ?? "Data not available";
+            int isBookable = Intent.GetIntExtra("isBookable", 0);
 
             romNavn = FindViewById<TextView>(Resource.Id.romNavn);
             plasser = FindViewById<TextView>(Resource.Id.plasser2);
             prosjektor = FindViewById<TextView>(Resource.Id.prosjektor2);
+            reserver = FindViewById<TextView>(Resource.Id.reserver2);
             romNavn.Text = name;
             plasser.Text = storrelseText.ToString();
             prosjektor.Text = prosjektorText.ToString();
+
+
+            currentDate = DateTime.Now;
+            time = currentDate.ToString("MM.dd.yyyy HH:mm:ss");
+            Toast msg = Toast.MakeText(this, time, ToastLength.Long);
+            msg.Show();
+            reserverButton = FindViewById<Button>(Resource.Id.ReserverButton);
+            reserverButton.Visibility = ViewStates.Invisible;
+
+            if (SendToPhp())
+            {
+                reserver.Text = "Ja";
+                reserverButton.Visibility = ViewStates.Visible;
+            }
+            else
+            {
+                reserver.Text = "Nei";
+                reserverButton.Visibility = ViewStates.Invisible;
+            }
 
             mainMenu = FindViewById<ImageButton>(Resource.Id.westerdalsLogo);
             menuButton = FindViewById<ImageButton>(Resource.Id.menuButton);
@@ -59,8 +89,74 @@ namespace PJAPP
             {
                 StartActivity(typeof(Menu));
             };
-
+            
            
+        }
+        public class data
+        {
+            public string navn { get; set; }
+            public string timestamp { get; set; }
+        }
+        private bool SendToPhp()
+        {
+            try
+            {
+                data DataObj = new data();
+                DataObj.navn = name;
+                DataObj.timestamp = time;
+
+                /*Toast datatext1 = Toast.MakeText(this, DataObj.df_text2, ToastLength.Long);
+                datatext1.Show();*/
+                string JSONString = JsonConvert.SerializeObject(DataObj, Formatting.None);
+                Toast dataO = Toast.MakeText(this, JSONString, ToastLength.Long);
+                 dataO.Show();
+
+                string url = "http://pj3100.somee.com/BookRomV2.php";
+
+                HttpWebRequest newRequest = (HttpWebRequest)WebRequest.Create(url);
+
+                newRequest.Method = "POST";
+
+                string postData = JSONString;
+
+                byte[] pdata = Encoding.UTF8.GetBytes(postData);
+
+                newRequest.ContentType = "application/x-www-form-urlencoded";
+                newRequest.ContentLength = pdata.Length;
+
+                Stream myStream = newRequest.GetRequestStream();
+                myStream.Write(pdata, 0, pdata.Length);
+
+                WebResponse myResponse = newRequest.GetResponse();
+
+                Stream responseStream = myResponse.GetResponseStream();
+
+                StreamReader streamReader = new StreamReader(responseStream);
+
+                string result = streamReader.ReadToEnd();
+
+
+                streamReader.Close();
+                responseStream.Close();
+                myStream.Close();
+
+                if (result.Equals("1"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (WebException ex)
+            {
+                string _exception = ex.ToString();
+                Toast error = Toast.MakeText(this, _exception, ToastLength.Long);
+                error.Show();
+                Console.WriteLine("--->" + _exception);
+                return false;
+            }
         }
     }
 }
