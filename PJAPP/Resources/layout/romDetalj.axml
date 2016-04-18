@@ -13,8 +13,8 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_weight="5"
+        android:layout_height="0dp"
+        android:layout_weight="15"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -25,7 +25,7 @@
     <RelativeLayout
         android:minWidth="25px"
         android:minHeight="25px"
-        android:layout_weight="80"
+        android:layout_weight="70"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
@@ -54,6 +54,16 @@
             android:textColor="#000"
             android:textSize="20sp" />
         <TextView
+            android:text="Kan reserveres:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/reserver1"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/prosjektor1"
+            android:textColor="#000"
+            android:textSize="20sp" />
+        <TextView
             android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -74,5 +84,29 @@
             android:layout_below="@id/plasser2"
             android:textColor="#000"
             android:textSize="20sp" />
+        <TextView
+            android:text="xxxxxx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/reserver2"
+            android:layout_toRightOf="@id/reserver1"
+            android:layout_below="@id/prosjektor2"
+            android:textColor="#000"
+            android:textSize="20sp" />
     </RelativeLayout>
+    <Button
+        android:text="Reserver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ReserverButton"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="8"
+        android:background="@drawable/bigButtonStyle"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 </LinearLayout>
