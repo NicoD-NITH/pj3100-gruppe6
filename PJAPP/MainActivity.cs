@@ -1,7 +1,5 @@
 ﻿using System;
 using Android.App;
-using Android.Content;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
@@ -35,13 +33,17 @@ namespace PJAPP
             {
                 sendText1 = editText1.Text;
                 sendText2 = editText2.Text;
-                if (SendToPhp())
+                if (SendToPhp() == 1)
                 {
                     StartActivity(typeof(MainPage));
                 }
-                else
+                else if(SendToPhp() == 2)
                 {
-                    Toast msg = Toast.MakeText(this, "Feil passord/brukernavn", ToastLength.Long);
+                    Toast msg = Toast.MakeText(this, "Feil brukernavn.", ToastLength.Long);
+                    msg.Show();
+                } else
+                {
+                    Toast msg = Toast.MakeText(this, "Feil passord.", ToastLength.Long);
                     msg.Show();
                 }
             };
@@ -53,7 +55,7 @@ namespace PJAPP
             public string df_text2 { get; set; }
         }
 
-        private bool SendToPhp()
+        private int SendToPhp()
         {
             try
             {
@@ -67,7 +69,7 @@ namespace PJAPP
                /* Toast dataO = Toast.MakeText(this, JSONString, ToastLength.Long);
                 dataO.Show();*/
 
-                string url = "http://pj3100.somee.com/Logintest.php";
+                string url = "http://pj3100.somee.com/cryptLogin.php";
 
                 HttpWebRequest newRequest = (HttpWebRequest)WebRequest.Create(url);
 
@@ -98,11 +100,15 @@ namespace PJAPP
 
                 if (result.Equals("1"))
                 {
-                    return true;
+                    return 1;
                 }
-                else
+                else if(result.Equals("2"))
                 {
-                    return false;
+                    return 2;
+                }
+                else 
+                {
+                    return 0;
                 }
             }
             catch (WebException ex)
@@ -111,7 +117,7 @@ namespace PJAPP
                 Toast error = Toast.MakeText(this, _exception, ToastLength.Long);
                 error.Show();
                 Console.WriteLine("--->" + _exception);
-                return false;
+                return 0;
             }
         }
     }

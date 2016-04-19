@@ -6,6 +6,8 @@ D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.Core.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.Xml.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.Xml.Linq.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\Xamarin.Android.Support.v13.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\Xamarin.Android.Support.v4.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\Xamarin.Estimote.Android.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.Runtime.Serialization.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\assemblies\System.ServiceModel.Internals.dll

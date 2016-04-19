@@ -12,7 +12,6 @@ D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\drawable\styleedittext.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\drawable\bigbuttonstyle.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\R.cs.flag
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\uploadflags.txt
-D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\PJAPP.csprojResolveAssemblyReference.cache
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\anim\dialogslideinup.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\anim\dialogslideoutup.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\values\styles.xml
@@ -36,5 +35,8 @@ D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\drawable\infotextstyle.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\bin\Debug\Newtonsoft.Json.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\bin\Debug\Newtonsoft.Json.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\layout\veilederrow.xml
+D:\VSProj\TESTA\PJAPP\PJAPP\bin\Debug\Xamarin.Android.Support.v4.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\bin\Debug\Xamarin.Android.Support.v13.dll
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\PJAPP.csprojResolveAssemblyReference.cache
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\PJAPP.dll.mdb
 D:\VSProj\TESTA\PJAPP\PJAPP\bin\Debug\PJAPP.dll.mdb

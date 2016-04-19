@@ -1,11 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
@@ -53,7 +47,7 @@ namespace PJAPP
             }
 
             TextView txtDistance = row.FindViewById<TextView>(Resource.Id.txtDistance);
-            txtDistance.Text = mItems[position].distance.ToString() + "m";
+            txtDistance.Text = mItems[position].distance.ToString();
 
             TextView txtName = row.FindViewById<TextView>(Resource.Id.txtName);
             txtName.Text = mItems[position].RomNavn;

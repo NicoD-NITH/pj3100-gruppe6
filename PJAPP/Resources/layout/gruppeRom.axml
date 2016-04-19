@@ -1,31 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="#F9F7EE"
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swiperefresh"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:minWidth="300dp"
-    android:minHeight="400dp"
+    android:background="#F9F7EE"
     android:weightSum="100">
-    <include
-        layout="@layout/menuBar" />
-<!-- <TextView
-        android:text=""
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listeHeader1"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:gravity="center" /> -->
-    <ListView
+    <LinearLayout
+        android:orientation="vertical"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="80"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:id="@+id/romListe1" />
-</LinearLayout>
+        android:layout_height="fill_parent"
+        android:background="#F9F7EE"
+        android:weightSum="100"
+        android:id="@+id/toolbar"
+        android:columnCount="3"
+        android:showDividers="none">
+        <include
+            layout="@layout/menuBar" />
+    <!--<ProgressBar
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarRom"
+        android:layout_weight ="10"
+       />-->
+        <ListView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="80"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/romListe1" />
+    </LinearLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

@@ -1,19 +1,16 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using EstimoteSdk;
 using System.Net;
 using Newtonsoft.Json;
-using Java.Lang;
+using Android.Support.V4.Widget;
+using System.ComponentModel;
 
 namespace PJAPP
 {
@@ -24,7 +21,8 @@ namespace PJAPP
         Region _region;
         ImageButton menuButton;
         ImageButton mainPage;
-
+        SwipeRefreshLayout swiperefresh;
+  
         private WebClient roomClient;
         private Uri servURL;
 
@@ -43,7 +41,9 @@ namespace PJAPP
 
             menuButton = FindViewById<ImageButton>(Resource.Id.menuButton);
             mainPage = FindViewById<ImageButton>(Resource.Id.westerdalsLogo);
-            
+
+            swiperefresh = FindViewById<SwipeRefreshLayout>(Resource.Id.swiperefresh);
+            swiperefresh.Refresh += Swiperefresh_Refresh;
 
             menuButton.Click += delegate
             {
@@ -57,7 +57,6 @@ namespace PJAPP
             _beaconManager = new BeaconManager(this);
             _region = new Region("SomeBeaconIdentifier", "b9407f30-f5f8-466e-aff9-25556b57fe6d");
 
-            //TextView listeHeader = FindViewById<TextView>(Resource.Id.listeHeader1);
             romListView = FindViewById<ListView>(Resource.Id.romListe1);
             roomClient = new WebClient();
             servURL = new Uri("http://pj3100.somee.com/GetRooms.php");
@@ -68,14 +67,7 @@ namespace PJAPP
             _beaconManager.EnteredRegion += (sender, e) =>
             {
                 int numberOfBeacons = e.Beacons.Count;
-                /*if (numberOfBeacons == 0)
-                {
-                    listeHeader.Text = string.Format("Fant ingen rom i nærheten");
-                }
-                else
-                {
-                    listeHeader.Text = string.Format("Fant følgende {0} rom.", numberOfBeacons);
-                }*/
+
                 for (int i = 0; i < numberOfBeacons; i++)
                 {
 
@@ -91,6 +83,69 @@ namespace PJAPP
 
             roomClient.DownloadDataAsync(servURL);
             roomClient.DownloadDataCompleted += roomClient_DownloadDataCompleted;
+        }
+
+        private void Swiperefresh_Refresh(object sender, EventArgs e)
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.DoWork += Worker_DoWork;
+            worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
+            worker.RunWorkerAsync();
+            
+        }
+
+        private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            RunOnUiThread(() =>
+            {
+                swiperefresh.Refreshing = false;
+            });
+        }
+
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            romListeDB.Clear();
+            if(!roomClient.IsBusy)
+            {
+                roomClient.DownloadDataAsync(servURL);
+                roomClient.DownloadDataCompleted += roomClient_DownloadDataCompleted;
+            }
+
+            _beaconManager.Connect(this);
+
+            _beaconManager.SetBackgroundScanPeriod(2000, 0);
+            _beaconManager.EnteredRegion += (senderB, Be) =>
+            {
+                int numberOfBeacons = Be.Beacons.Count;
+
+                romListe.Clear();
+
+                for (int i = 0; i < numberOfBeacons; i++)
+                {
+                    romListe.Add(new RomBeacon
+                    {
+                        BeaconUUID = Be.Beacons[i].ProximityUUID.ToString(),
+                        BeaconMajor = Be.Beacons[i].Major,
+                        BeaconMinor = Be.Beacons[i].Minor,
+                        distance = calculateDistance(Be.Beacons[i].MeasuredPower, Be.Beacons[i].Rssi)
+                    });
+                }
+                if (!(romListeDB.Count <= 0))
+                {
+                    foreach (RomBeacon b in romListeDB)
+                    {
+                        foreach (RomBeacon b2 in romListe)
+                        {
+                            if (b.BeaconUUID == b2.BeaconUUID && b.BeaconMajor == b2.BeaconMajor && b.BeaconMinor == b2.BeaconMinor)
+                            {
+                                b.distance = b2.distance;
+                            }
+                        }
+                    }
+                }
+            };
+            adapter.NotifyDataSetChanged();
+            
         }
 
         private void roomClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
@@ -120,24 +175,31 @@ namespace PJAPP
                 return System.Math.Round(accuracy, 2);
             }
         }
+
+        string parseDistance(double calculatedDistance)
+        {
+            if(calculatedDistance < 8)
+            {
+                return "<10m";
+            }
+            else if(calculatedDistance > 8 && calculatedDistance  < 12)
+            {
+                return "<20m";
+            } else
+            {
+                return ">20m";
+            }
+            
+        }
         protected override void OnResume()
         {
             base.OnResume();
             _beaconManager.Connect(this);
-            
-            //TextView listeHeader = FindViewById<TextView>(Resource.Id.listeHeader1);
-            _beaconManager.SetBackgroundScanPeriod(2000, 200);
+
+            _beaconManager.SetBackgroundScanPeriod(2000, 0);
             _beaconManager.EnteredRegion += (sender, e) =>
             {
                 int numberOfBeacons = e.Beacons.Count;
-                /*if (numberOfBeacons == 0)
-                {
-                    listeHeader.Text = string.Format("Fant ingen rom i nærheten");
-                }
-                else
-                {
-                    listeHeader.Text = string.Format("Fant følgende {0} rom.", numberOfBeacons);
-                }*/
                
                 romListe = new List<RomBeacon>();
 
@@ -149,7 +211,6 @@ namespace PJAPP
                         BeaconMajor = e.Beacons[i].Major,
                         BeaconMinor = e.Beacons[i].Minor,
                         distance = calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi)
-                        //,
                     });
                 }
                 if (!(romListeDB.Count <= 0))
@@ -158,13 +219,10 @@ namespace PJAPP
                     {
                         foreach (RomBeacon b2 in romListe)
                         {
-                            /*if (romListeFinal.Count <= romListe.Count)
-                            {*/
-                                if (b.BeaconUUID == b2.BeaconUUID && b.BeaconMajor == b2.BeaconMajor && b.BeaconMinor == b2.BeaconMinor)
-                                {
-                                    b.distance = b2.distance;
-                                }
-                            //}
+                            if (b.BeaconUUID == b2.BeaconUUID && b.BeaconMajor == b2.BeaconMajor && b.BeaconMinor == b2.BeaconMinor)
+                            {
+                                b.distance = b2.distance;
+                            }
                         }
                     }
                 }
@@ -176,13 +234,6 @@ namespace PJAPP
                     romListView.ItemClick += romListeClick;
                 }
             };
-
-            /*Runnable listUpdater = new Runnable(() =>
-                    {
-                        adapter.NotifyDataSetChanged();
-                    });
-                    mHandler.PostDelayed(listUpdater, 500);*/
-
         }
 
         public void OnServiceReady()

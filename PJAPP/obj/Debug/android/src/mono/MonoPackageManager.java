@@ -81,6 +81,8 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		"PJAPP.dll",
 		"Newtonsoft.Json.dll",
+		"Xamarin.Android.Support.v13.dll",
+		"Xamarin.Android.Support.v4.dll",
 		"Xamarin.Estimote.Android.dll",
 		"System.ServiceModel.Internals.dll",
 	};

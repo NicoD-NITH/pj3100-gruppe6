@@ -1,21 +1,14 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using System.Net;
 using Newtonsoft.Json;
 using System.IO;
-using Java.Util;
-using Android.Text.Format;
-using Java.Text;
-using System.Globalization;
 
 namespace PJAPP
 {
@@ -42,7 +35,7 @@ namespace PJAPP
             this.RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.romDetalj);
 
-            int minor = Intent.GetIntExtra("minor" , 0);
+            int minor = Intent.GetIntExtra("minor", 0);
             int major = Intent.GetIntExtra("major", 0);
             name = Intent.GetStringExtra("name") ?? "Data not available";
             string ID = Intent.GetStringExtra("ID") ?? "Data not available";
@@ -62,8 +55,7 @@ namespace PJAPP
 
             currentDate = DateTime.Now;
             time = currentDate.ToString("MM.dd.yyyy HH:mm:ss");
-            Toast msg = Toast.MakeText(this, time, ToastLength.Long);
-            msg.Show();
+
             reserverButton = FindViewById<Button>(Resource.Id.ReserverButton);
             reserverButton.Visibility = ViewStates.Invisible;
 
@@ -89,14 +81,15 @@ namespace PJAPP
             {
                 StartActivity(typeof(Menu));
             };
-            
-           
+
+
         }
         public class data
         {
             public string navn { get; set; }
             public string timestamp { get; set; }
         }
+
         private bool SendToPhp()
         {
             try
@@ -105,11 +98,9 @@ namespace PJAPP
                 DataObj.navn = name;
                 DataObj.timestamp = time;
 
-                /*Toast datatext1 = Toast.MakeText(this, DataObj.df_text2, ToastLength.Long);
-                datatext1.Show();*/
+
                 string JSONString = JsonConvert.SerializeObject(DataObj, Formatting.None);
-                Toast dataO = Toast.MakeText(this, JSONString, ToastLength.Long);
-                 dataO.Show();
+
 
                 string url = "http://pj3100.somee.com/BookRomV2.php";
 
