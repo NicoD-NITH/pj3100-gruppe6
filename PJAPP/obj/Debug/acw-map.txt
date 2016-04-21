@@ -26,6 +26,14 @@ PJAPP.RomDetalj, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj
 PJAPP.RomDetalj, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj
 PJAPP.RomDetalj;md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj
 pjapp.RomDetalj;md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj
+PJAPP.datePicker, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.datePicker
+PJAPP.datePicker, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.datePicker
+PJAPP.datePicker;md59db0963bbf397043484a3f6db5cf9cc5.datePicker
+pjapp.datePicker;md59db0963bbf397043484a3f6db5cf9cc5.datePicker
+PJAPP.timePicker, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.timePicker
+PJAPP.timePicker, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.timePicker
+PJAPP.timePicker;md59db0963bbf397043484a3f6db5cf9cc5.timePicker
+pjapp.timePicker;md59db0963bbf397043484a3f6db5cf9cc5.timePicker
 PJAPP.veilederListAdapter, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.veilederListAdapter
 PJAPP.veilederListAdapter, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.veilederListAdapter
 PJAPP.veilederListAdapter;md59db0963bbf397043484a3f6db5cf9cc5.veilederListAdapter

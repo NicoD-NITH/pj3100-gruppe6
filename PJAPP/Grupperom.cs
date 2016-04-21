@@ -11,6 +11,7 @@ using System.Net;
 using Newtonsoft.Json;
 using Android.Support.V4.Widget;
 using System.ComponentModel;
+using Newtonsoft.Json.Linq;
 
 namespace PJAPP
 {
@@ -62,6 +63,8 @@ namespace PJAPP
             servURL = new Uri("http://pj3100.somee.com/GetRooms.php");
 
             romListe = new List<RomBeacon>();
+
+            romListeDB = new List<RomBeacon>();
 
             _beaconManager.SetBackgroundScanPeriod(2000, 0);
             _beaconManager.EnteredRegion += (sender, e) =>

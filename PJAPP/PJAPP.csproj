@@ -75,7 +75,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RomBeacon.cs" />
     <Compile Include="RomDetalj.cs" />
+    <Compile Include="datePicker.cs" />
+    <Compile Include="timePicker.cs" />
     <Compile Include="veileder.cs" />
+    <Compile Include="VeilederHelp.cs" />
     <Compile Include="veilederListAdapter.cs" />
     <Compile Include="veilederSide.cs" />
   </ItemGroup>

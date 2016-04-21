@@ -18,11 +18,12 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:id="@+id/imageView1" />
-    <ProgressBar
+<!--<ProgressBar
         style="?android:attr/progressBarStyleSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/progressBar1" />
+        android:id="@+id/progressBar1"
+       /> -->
     <EditText
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"

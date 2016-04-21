@@ -49,14 +49,39 @@
                 android:layout_marginLeft="6dp"
                 android:id="@+id/gamificationInfo" />
         </LinearLayout>
-        <TextView
-            android:text="Navn Navnesen Programmering Campus CK32"
-            android:textSize="30sp"
-            android:textColor="#000"
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
             android:layout_width="0dp"
             android:layout_weight="66"
             android:layout_height="match_parent"
-            android:id="@+id/brukerInfo" />
+            android:weightSum="100">
+            <TextView
+                android:text="Navn Navnesen"
+                android:textSize="30sp"
+                android:textColor="#000"
+                android:layout_weight="33"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:id="@+id/userName" />
+            <TextView
+                android:text="Login login"
+                android:textSize="30sp"
+                android:textColor="#000"
+                android:layout_weight="33"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:id="@+id/userLoginName" />
+            <TextView
+                android:text="Campus campus"
+                android:textSize="30sp"
+                android:textColor="#000"
+                android:layout_weight="33"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:id="@+id/userCourse" />
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"

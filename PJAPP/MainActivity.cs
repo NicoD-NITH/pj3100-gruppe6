@@ -7,6 +7,8 @@ using System.Net;
 using System.Text;
 using System.IO;
 using Newtonsoft.Json;
+using Android.Content;
+using Android.Preferences;
 
 namespace PJAPP
 {
@@ -36,6 +38,10 @@ namespace PJAPP
                 if (SendToPhp() == 1)
                 {
                     StartActivity(typeof(MainPage));
+                    ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(ApplicationContext);
+                    ISharedPreferencesEditor editor = prefs.Edit();
+                    editor.PutString("userName", editText1.Text);
+                    editor.Apply();
                 }
                 else if(SendToPhp() == 2)
                 {
@@ -63,11 +69,8 @@ namespace PJAPP
                 DataObj.df_text1 = sendText1;
                 DataObj.df_text2 = sendText2;
 
-                /*Toast datatext1 = Toast.MakeText(this, DataObj.df_text2, ToastLength.Long);
-                datatext1.Show();*/
                 string JSONString = JsonConvert.SerializeObject(DataObj, Formatting.None);
-               /* Toast dataO = Toast.MakeText(this, JSONString, ToastLength.Long);
-                dataO.Show();*/
+
 
                 string url = "http://pj3100.somee.com/cryptLogin.php";
 
