@@ -6,6 +6,18 @@ PJAPP.gruppeRomListAdapter, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.gruppeRomL
 PJAPP.gruppeRomListAdapter, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.gruppeRomListAdapter
 PJAPP.gruppeRomListAdapter;md59db0963bbf397043484a3f6db5cf9cc5.gruppeRomListAdapter
 pjapp.gruppeRomListAdapter;md59db0963bbf397043484a3f6db5cf9cc5.gruppeRomListAdapter
+PJAPP.HelpDelete, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.HelpDelete
+PJAPP.HelpDelete, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.HelpDelete
+PJAPP.HelpDelete;md59db0963bbf397043484a3f6db5cf9cc5.HelpDelete
+pjapp.HelpDelete;md59db0963bbf397043484a3f6db5cf9cc5.HelpDelete
+PJAPP.HelpList, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.HelpList
+PJAPP.HelpList, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.HelpList
+PJAPP.HelpList;md59db0963bbf397043484a3f6db5cf9cc5.HelpList
+pjapp.HelpList;md59db0963bbf397043484a3f6db5cf9cc5.HelpList
+PJAPP.HelpListAdapter, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.HelpListAdapter
+PJAPP.HelpListAdapter, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.HelpListAdapter
+PJAPP.HelpListAdapter;md59db0963bbf397043484a3f6db5cf9cc5.HelpListAdapter
+pjapp.HelpListAdapter;md59db0963bbf397043484a3f6db5cf9cc5.HelpListAdapter
 PJAPP.MainPage, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.MainPage
 PJAPP.MainPage, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.MainPage
 PJAPP.MainPage;md59db0963bbf397043484a3f6db5cf9cc5.MainPage
@@ -34,6 +46,10 @@ PJAPP.timePicker, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.timePicker
 PJAPP.timePicker, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.timePicker
 PJAPP.timePicker;md59db0963bbf397043484a3f6db5cf9cc5.timePicker
 pjapp.timePicker;md59db0963bbf397043484a3f6db5cf9cc5.timePicker
+PJAPP.VeilederHelp, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.VeilederHelp
+PJAPP.VeilederHelp, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.VeilederHelp
+PJAPP.VeilederHelp;md59db0963bbf397043484a3f6db5cf9cc5.VeilederHelp
+pjapp.VeilederHelp;md59db0963bbf397043484a3f6db5cf9cc5.VeilederHelp
 PJAPP.veilederListAdapter, PJAPP;md59db0963bbf397043484a3f6db5cf9cc5.veilederListAdapter
 PJAPP.veilederListAdapter, PJAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59db0963bbf397043484a3f6db5cf9cc5.veilederListAdapter
 PJAPP.veilederListAdapter;md59db0963bbf397043484a3f6db5cf9cc5.veilederListAdapter

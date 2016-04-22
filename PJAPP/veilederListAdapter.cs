@@ -46,16 +46,10 @@ namespace PJAPP
                 row = LayoutInflater.From(mContext).Inflate(Resource.Layout.veilederRow, null, false);
             }
 
-            /*TextView txtMinor = row.FindViewById<TextView>(Resource.Id.txtMinor);
-            txtMinor.Text = mItems[position].minor.ToString();
-
-            TextView txtMajor = row.FindViewById<TextView>(Resource.Id.txtMajor);
-            txtMajor.Text = mItems[position].major.ToString();
-            */
             TextView txtFag= row.FindViewById<TextView>(Resource.Id.txtFag);
             txtFag.Text = mItems[position].FagID;
 
-            TextView txtNavn = row.FindViewById<TextView>(Resource.Id.txtNavn);
+            TextView txtNavn = row.FindViewById<TextView>(Resource.Id.txtVeilederNavn);
             txtNavn.Text = mItems[position].VeilederNavn;
 
             return row;

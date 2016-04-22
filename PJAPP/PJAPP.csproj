@@ -67,6 +67,10 @@
   <ItemGroup>
     <Compile Include="Grupperom.cs" />
     <Compile Include="gruppeRomListAdapter.cs" />
+    <Compile Include="HelpDelete.cs" />
+    <Compile Include="helpItem.cs" />
+    <Compile Include="HelpList.cs" />
+    <Compile Include="HelpListAdapter.cs" />
     <Compile Include="MainPage.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Menu.cs" />
@@ -101,6 +105,7 @@
     <AndroidResource Include="Resources\layout\veilederRow.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\helpRow.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />

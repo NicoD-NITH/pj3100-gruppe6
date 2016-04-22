@@ -8,6 +8,8 @@
   <uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
   <application android:label="PJAPP" android:name="mono.android.app.Application" android:allowBackup="true" android:debuggable="true">
     <activity android:label="Grupperom" android:name="md59db0963bbf397043484a3f6db5cf9cc5.Grupperom" />
+    <activity android:label="HelpDelete" android:name="md59db0963bbf397043484a3f6db5cf9cc5.HelpDelete" />
+    <activity android:label="HelpList" android:name="md59db0963bbf397043484a3f6db5cf9cc5.HelpList" />
     <activity android:label="MainPage" android:name="md59db0963bbf397043484a3f6db5cf9cc5.MainPage" />
     <activity android:icon="@drawable/icon" android:label="PJAPP" android:name="md59db0963bbf397043484a3f6db5cf9cc5.MainActivity">
       <intent-filter>
@@ -18,6 +20,7 @@
     <activity android:label="Menu" android:name="md59db0963bbf397043484a3f6db5cf9cc5.Menu" />
     <activity android:label="profilSide" android:name="md59db0963bbf397043484a3f6db5cf9cc5.profilSide" />
     <activity android:label="RomDetalj" android:name="md59db0963bbf397043484a3f6db5cf9cc5.RomDetalj" />
+    <activity android:label="VeilederHelp" android:name="md59db0963bbf397043484a3f6db5cf9cc5.VeilederHelp" />
     <activity android:label="veilederSide" android:name="md59db0963bbf397043484a3f6db5cf9cc5.veilederSide" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="PJAPP.PJAPP.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->

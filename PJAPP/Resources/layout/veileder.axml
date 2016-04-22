@@ -16,9 +16,23 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
-        android:id="@+id/veilederView" />
+        android:id="@+id/veilederView"
+        android:layout_weight="70" />
+    <Button
+        android:text="Se hjelp forespørsler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/HjelpButton"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="20"
+        android:background="@drawable/bigButtonStyle"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 </LinearLayout>

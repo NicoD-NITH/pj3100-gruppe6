@@ -36,65 +36,71 @@
         <TextView
             android:text="Plasser:"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:id="@+id/plasser1"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
             android:layout_alignParentTop="true"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:gravity="left" />
         <TextView
             android:text="Prosjektor: "
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
             android:id="@+id/prosjektor1"
             android:layout_below="@id/plasser1"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:gravity="left" />
         <TextView
             android:text="Kan reserveres:"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:id="@+id/reserver1"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
             android:layout_below="@id/prosjektor1"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:gravity="left" />
         <TextView
             android:text=""
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:id="@+id/plasser2"
             android:layout_toRightOf="@id/plasser1"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:gravity="left" />
         <TextView
             android:text=""
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:id="@+id/prosjektor2"
             android:layout_toRightOf="@id/prosjektor1"
             android:layout_below="@id/plasser2"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:gravity="center" />
         <TextView
             android:text="xxxxxx"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:id="@+id/reserver2"
             android:layout_toRightOf="@id/reserver1"
             android:layout_below="@id/prosjektor2"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:gravity="left" />
     </RelativeLayout>
     <Button
         android:text="Reserver"

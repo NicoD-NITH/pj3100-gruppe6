@@ -23,7 +23,8 @@ namespace PJAPP
         ImageButton menuButton;
         ImageButton mainPage;
         SwipeRefreshLayout swiperefresh;
-  
+        TextView infoText;
+        Button hjelpButton;
         private WebClient roomClient;
         private Uri servURL;
 
@@ -42,6 +43,11 @@ namespace PJAPP
 
             menuButton = FindViewById<ImageButton>(Resource.Id.menuButton);
             mainPage = FindViewById<ImageButton>(Resource.Id.westerdalsLogo);
+            infoText = FindViewById<TextView>(Resource.Id.ingenInfo);
+            hjelpButton = FindViewById<Button>(Resource.Id.HjelpButton);
+
+            hjelpButton.Visibility = ViewStates.Gone;
+            infoText.Visibility = ViewStates.Gone;
 
             swiperefresh = FindViewById<SwipeRefreshLayout>(Resource.Id.swiperefresh);
             swiperefresh.Refresh += Swiperefresh_Refresh;
@@ -86,18 +92,74 @@ namespace PJAPP
 
             roomClient.DownloadDataAsync(servURL);
             roomClient.DownloadDataCompleted += roomClient_DownloadDataCompleted;
+
+            if (romListeDB.Count == 0)
+            {
+                infoText.Visibility = ViewStates.Visible;
+                infoText.Text = "Ingenting her, swipe ned for å fornye.";
+            }
+            else
+            {
+                infoText.Visibility = ViewStates.Gone;
+            }
         }
 
         private void Swiperefresh_Refresh(object sender, EventArgs e)
         {
-            BackgroundWorker worker = new BackgroundWorker();
+            /*BackgroundWorker worker = new BackgroundWorker();
             worker.DoWork += Worker_DoWork;
             worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
-            worker.RunWorkerAsync();
+            worker.RunWorkerAsync();*/
+            if(!roomClient.IsBusy)
+            {
+                swiperefresh.Refreshing = true;
+                romListeDB.Clear();
+                if (!roomClient.IsBusy)
+                {
+                    roomClient.DownloadDataAsync(servURL);
+                    roomClient.DownloadDataCompleted += roomClient_DownloadDataCompleted;
+                }
+
+                _beaconManager.Connect(this);
+
+                _beaconManager.SetBackgroundScanPeriod(2000, 0);
+                _beaconManager.EnteredRegion += (senderB, Be) =>
+                {
+                    int numberOfBeacons = Be.Beacons.Count;
+
+                    romListe.Clear();
+
+                    for (int i = 0; i < numberOfBeacons; i++)
+                    {
+                        romListe.Add(new RomBeacon
+                        {
+                            BeaconUUID = Be.Beacons[i].ProximityUUID.ToString(),
+                            BeaconMajor = Be.Beacons[i].Major,
+                            BeaconMinor = Be.Beacons[i].Minor,
+                            distance = calculateDistance(Be.Beacons[i].MeasuredPower, Be.Beacons[i].Rssi)
+                        });
+                    }
+                    if (!(romListeDB.Count <= 0))
+                    {
+                        foreach (RomBeacon b in romListeDB)
+                        {
+                            foreach (RomBeacon b2 in romListe)
+                            {
+                                if (b.BeaconUUID == b2.BeaconUUID && b.BeaconMajor == b2.BeaconMajor && b.BeaconMinor == b2.BeaconMinor)
+                                {
+                                    b.distance = b2.distance;
+                                }
+                            }
+                        }
+                    }
+                };
+                adapter.NotifyDataSetChanged();
+                swiperefresh.Refreshing = false;
+            }
             
         }
 
-        private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        /*private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             RunOnUiThread(() =>
             {
@@ -107,6 +169,7 @@ namespace PJAPP
 
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            swiperefresh.Refreshing = true;
             romListeDB.Clear();
             if(!roomClient.IsBusy)
             {
@@ -149,7 +212,7 @@ namespace PJAPP
             };
             adapter.NotifyDataSetChanged();
             
-        }
+        }*/
 
         private void roomClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
         {
@@ -157,6 +220,7 @@ namespace PJAPP
             {
                 string json = Encoding.UTF8.GetString(e.Result);
                 romListeDB = JsonConvert.DeserializeObject<List<RomBeacon>>(json);
+                infoText.Visibility = ViewStates.Gone;
             });
         }
 
@@ -197,8 +261,9 @@ namespace PJAPP
         protected override void OnResume()
         {
             base.OnResume();
-            _beaconManager.Connect(this);
+            
 
+            _beaconManager.Connect(this);
             _beaconManager.SetBackgroundScanPeriod(2000, 0);
             _beaconManager.EnteredRegion += (sender, e) =>
             {

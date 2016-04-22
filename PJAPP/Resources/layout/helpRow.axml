@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="@drawable/infoBoxStyle"
+    android:weightSum="100">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="50"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:background="@drawable/infoBoxStyle"
+        android:weightSum="100">
+        <TextView
+            android:text="RomNavn"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_weight="50"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtRom"
+            android:paddingLeft="5dp"
+            android:paddingRight="2dp"
+            android:paddingBottom="2dp" />
+        <TextView
+            android:text="FirstName"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_weight="50"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtNavn"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingBottom="2dp" />
+    </LinearLayout>
+    <TextView
+        android:text="Tidspunkt"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_weight="50"
+        android:layout_height="0dp"
+        android:id="@+id/txtTid"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingBottom="2dp" />
+</LinearLayout>

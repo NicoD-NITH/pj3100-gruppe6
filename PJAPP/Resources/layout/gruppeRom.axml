@@ -18,13 +18,16 @@
         android:showDividers="none">
         <include
             layout="@layout/menuBar" />
-    <!--<ProgressBar
-        style="?android:attr/progressBarStyleSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBarRom"
-        android:layout_weight ="10"
-       />-->
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/ingenInfo"
+            android:textColor="#000"
+            android:textSize="20sp" />
         <ListView
             android:minWidth="25px"
             android:minHeight="25px"
@@ -36,4 +39,17 @@
             android:layout_marginTop="5dp"
             android:id="@+id/romListe1" />
     </LinearLayout>
+    <Button
+        android:text="Se forespørsler om hjelp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/HjelpButton"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="20"
+        android:background="@drawable/bigButtonStyle"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 </android.support.v4.widget.SwipeRefreshLayout>

@@ -38,5 +38,6 @@ D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\layout\veilederrow.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\bin\Debug\Xamarin.Android.Support.v4.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\bin\Debug\Xamarin.Android.Support.v13.dll
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\PJAPP.csprojResolveAssemblyReference.cache
+D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\res\layout\helprow.xml
 D:\VSProj\TESTA\PJAPP\PJAPP\obj\Debug\PJAPP.dll.mdb
 D:\VSProj\TESTA\PJAPP\PJAPP\bin\Debug\PJAPP.dll.mdb
