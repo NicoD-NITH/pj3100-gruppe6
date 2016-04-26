@@ -37,7 +37,7 @@ namespace PJAPP
                 sendText2 = editText2.Text;
                 if (SendToPhp() == 1)
                 {
-                    StartActivity(typeof(MainPage));
+                    StartActivity(typeof(Menu));
                     ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(ApplicationContext);
                     ISharedPreferencesEditor editor = prefs.Edit();
                     editor.PutString("userName", editText1.Text);

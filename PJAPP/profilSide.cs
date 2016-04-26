@@ -70,7 +70,7 @@ namespace PJAPP
             };
             mainPage.Click += delegate
             {
-                StartActivity(typeof(MainPage));
+                StartActivity(typeof(Menu));
             };
 
         }

@@ -9,6 +9,7 @@ using Android.Widget;
 using System.Net;
 using Newtonsoft.Json;
 using System.IO;
+using Android.Preferences;
 
 namespace PJAPP
 {
@@ -21,10 +22,14 @@ namespace PJAPP
         TextView plasser;
         TextView prosjektor;
         TextView reserver;
+        TextView reservert2;
+        TextView reservert1;
         Button reserverButton;
         string name;
         string time;
         DateTime currentDate;
+        string bookingStamp;
+        string student;
 
         int thisHour, thisMinute;
 
@@ -34,6 +39,9 @@ namespace PJAPP
             this.RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.romDetalj);
 
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(ApplicationContext);
+            student = prefs.GetString("userName", "");
+
             int minor = Intent.GetIntExtra("minor", 0);
             int major = Intent.GetIntExtra("major", 0);
             name = Intent.GetStringExtra("name") ?? "Data not available";
@@ -42,16 +50,19 @@ namespace PJAPP
             int storrelseText = Intent.GetIntExtra("plasser", 0);
             string prosjektorText = Intent.GetStringExtra("prosjektor") ?? "Data not available";
             int isBookable = Intent.GetIntExtra("isBookable", 0);
+            bookingStamp = Intent.GetStringExtra("bookingStamp") ?? "Data not available";
 
             romNavn = FindViewById<TextView>(Resource.Id.romNavn);
             plasser = FindViewById<TextView>(Resource.Id.plasser2);
             prosjektor = FindViewById<TextView>(Resource.Id.prosjektor2);
             reserver = FindViewById<TextView>(Resource.Id.reserver2);
+            reservert2 = FindViewById<TextView>(Resource.Id.reservert2);
+            reservert1 = FindViewById<TextView>(Resource.Id.reservert1);
 
             romNavn.Text = name;
             plasser.Text = storrelseText.ToString();
             prosjektor.Text = prosjektorText.ToString();
-
+            reservert2.Text = "Rommet var sist reservert i tre timer fra " + bookingStamp;
 
             currentDate = DateTime.Now;
             time = currentDate.ToString("MM.dd.yy HH:mm:ss");
@@ -62,15 +73,23 @@ namespace PJAPP
             reserverButton = FindViewById<Button>(Resource.Id.ReserverButton);
             reserverButton.Visibility = ViewStates.Invisible;
 
-            if (SendToPhp())
+            if(isBookable == 0)
+            {
+                reserver.Text = "Nei";
+                reservert1.Visibility = ViewStates.Gone;
+                reservert2.Visibility = ViewStates.Gone;
+            } else
             {
                 reserver.Text = "Ja";
+            }
+
+            if (canBeBooked())
+            {
                 reserverButton.Text = "Reserver de neste tre timene.";
                 reserverButton.Visibility = ViewStates.Visible;
             }
             else
             {
-                reserver.Text = "Nei";
                 reserverButton.Visibility = ViewStates.Invisible;
             }
 
@@ -79,7 +98,7 @@ namespace PJAPP
 
             mainMenu.Click += delegate
             {
-                StartActivity(typeof(MainPage));
+                StartActivity(typeof(Menu));
             };
             menuButton.Click += delegate
             {
@@ -134,7 +153,7 @@ namespace PJAPP
         }
 
 
-        private bool SendToPhp()
+        private bool canBeBooked()
         {
             try
             {

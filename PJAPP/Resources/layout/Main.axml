@@ -62,6 +62,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="20dp"
         android:weightSum="100"
+        android:gravity="center_horizontal"
         android:id="@+id/buttonWrap">
         <Button
             android:text="Logg inn"
@@ -72,20 +73,6 @@
             android:textSize="20dp"
             android:textColor="#000"
             android:textStyle="bold"
-            android:layout_marginRight="20dp"
-            android:height="70dp"
-            android:background="@drawable/bigButtonStyle"
-            android:layout_centerHorizontal="true" />
-        <Button
-            android:text="Glemt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
-            android:id="@+id/glemtButton"
-            android:textSize="20dp"
-            android:textColor="#000"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"
             android:height="70dp"
             android:background="@drawable/bigButtonStyle"
             android:layout_centerHorizontal="true" />

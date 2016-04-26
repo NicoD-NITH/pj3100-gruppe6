@@ -58,7 +58,7 @@ namespace PJAPP
             };
             mainPage.Click += delegate
             {
-                StartActivity(typeof(MainPage));
+                StartActivity(typeof(Menu));
             };
 
             _beaconManager = new BeaconManager(this);
@@ -77,17 +77,16 @@ namespace PJAPP
             {
                 int numberOfBeacons = e.Beacons.Count;
 
-                for (int i = 0; i < numberOfBeacons; i++)
-                {
-
-                    romListe.Add(new RomBeacon
+                    for (int i = 0; i < numberOfBeacons; i++)
                     {
-                        BeaconUUID = e.Beacons[i].ProximityUUID.ToString(),
-                        BeaconMajor = e.Beacons[i].Major,
-                        BeaconMinor = e.Beacons[i].Minor,
-                        distance = calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi)
-                    });
-                }
+                        romListe.Add(new RomBeacon
+                        {
+                            BeaconUUID = e.Beacons[i].ProximityUUID.ToString(),
+                            BeaconMajor = e.Beacons[i].Major,
+                            BeaconMinor = e.Beacons[i].Minor,
+                            distance = calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi)
+                        });
+                    }
             };
 
             roomClient.DownloadDataAsync(servURL);
@@ -129,16 +128,17 @@ namespace PJAPP
 
                     romListe.Clear();
 
-                    for (int i = 0; i < numberOfBeacons; i++)
-                    {
-                        romListe.Add(new RomBeacon
+                        for (int i = 0; i < numberOfBeacons; i++)
                         {
-                            BeaconUUID = Be.Beacons[i].ProximityUUID.ToString(),
-                            BeaconMajor = Be.Beacons[i].Major,
-                            BeaconMinor = Be.Beacons[i].Minor,
-                            distance = calculateDistance(Be.Beacons[i].MeasuredPower, Be.Beacons[i].Rssi)
-                        });
+                            romListe.Add(new RomBeacon
+                            {
+                                BeaconUUID = Be.Beacons[i].ProximityUUID.ToString(),
+                                BeaconMajor = Be.Beacons[i].Major,
+                                BeaconMinor = Be.Beacons[i].Minor,
+                                distance = calculateDistance(Be.Beacons[i].MeasuredPower, Be.Beacons[i].Rssi)
+                            });
                     }
+                    
                     if (!(romListeDB.Count <= 0))
                     {
                         foreach (RomBeacon b in romListeDB)
@@ -245,11 +245,11 @@ namespace PJAPP
 
         string parseDistance(double calculatedDistance)
         {
-            if(calculatedDistance < 8)
+            if(calculatedDistance < 10)
             {
                 return "<10m";
             }
-            else if(calculatedDistance > 8 && calculatedDistance  < 12)
+            else if(calculatedDistance > 8 && calculatedDistance  < 20)
             {
                 return "<20m";
             } else
@@ -261,8 +261,6 @@ namespace PJAPP
         protected override void OnResume()
         {
             base.OnResume();
-            
-
             _beaconManager.Connect(this);
             _beaconManager.SetBackgroundScanPeriod(2000, 0);
             _beaconManager.EnteredRegion += (sender, e) =>
@@ -281,7 +279,8 @@ namespace PJAPP
                         distance = calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi)
                     });
                 }
-                if (!(romListeDB.Count <= 0))
+                
+                if (!(romListeDB.Count <= 0) && !(romListe.Count <= 0))
                 {
                     foreach (RomBeacon b in romListeDB)
                     {
@@ -322,6 +321,7 @@ namespace PJAPP
             string prosjektor = romListeDB[e.Position].HarProsjektor;
             int plasser = romListeDB[e.Position].Plasser;
             int isBookable = romListeDB[e.Position].IsBookable;
+            string bookingStamp = romListeDB[e.Position].bookingStamp;
 
             var romDetaljIntent = new Intent(this, typeof(RomDetalj));
             romDetaljIntent.PutExtra("minor", minor);
@@ -331,6 +331,7 @@ namespace PJAPP
             romDetaljIntent.PutExtra("prosjektor", prosjektor);
             romDetaljIntent.PutExtra("plasser", plasser);
             romDetaljIntent.PutExtra("isBookable", isBookable);
+            romDetaljIntent.PutExtra("bookingStamp", bookingStamp);
             StartActivity(romDetaljIntent);
             OnDestroy();
         }

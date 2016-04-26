@@ -24,7 +24,7 @@ namespace PJAPP
 
             grupperom = FindViewById<Button>(Resource.Id.grupperomButton);
             veileder = FindViewById<Button>(Resource.Id.veilederButton);
-            minProfil = FindViewById<Button>(Resource.Id.minProfilButton);
+            //minProfil = FindViewById<Button>(Resource.Id.minProfilButton);
             loggUt = FindViewById<Button>(Resource.Id.loggUtButton);
             mainPage = FindViewById<ImageButton>(Resource.Id.westerdalsLogo);
 
@@ -38,19 +38,19 @@ namespace PJAPP
                 StartActivity(typeof(veilederSide));
             };
 
-            minProfil.Click += delegate
+            /*minProfil.Click += delegate
             {
                 StartActivity(typeof(profilSide));
-            };
+            };*/
 
             loggUt.Click += delegate
             {
                 StartActivity(typeof(MainActivity));
             };
-            mainPage.Click += delegate
+            /*mainPage.Click += delegate
             {
-                StartActivity(typeof(MainPage));
-            };
+                StartActivity(typeof(Menu));
+            };*/
         }
     }
 }

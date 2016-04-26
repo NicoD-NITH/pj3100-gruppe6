@@ -1,1 +1,1 @@
-<resources><string name="ApplicationName">PJAPP</string></resources>
+<resources><string name="ApplicationName">PJAPP</string><string-array name="rom_navn"><item>Auditoriet</item><item>Rom 45</item><item>Rom 48</item><item>Rom 51</item></string-array></resources>
