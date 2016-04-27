@@ -26,19 +26,21 @@ public final class R {
         public static final int infotextstyle=0x7f020005;
         public static final int medalje16=0x7f020006;
         public static final int menuitemstyle=0x7f020007;
-        public static final int sok=0x7f020008;
-        public static final int styleedittext=0x7f020009;
-        public static final int top_logo=0x7f02000a;
+        public static final int pil=0x7f020008;
+        public static final int sok=0x7f020009;
+        public static final int styleedittext=0x7f02000a;
+        public static final int top_logo=0x7f02000b;
     }
     public static final class id {
         public static final int HjelpButton=0x7f080004;
-        public static final int ReserverButton=0x7f080026;
+        public static final int ReserverButton=0x7f080027;
         public static final int buttonWrap=0x7f08000d;
         public static final int grupperomButton=0x7f080014;
         public static final int imageView1=0x7f08000a;
         public static final int infoBox=0x7f08000f;
         public static final int ingenInfo=0x7f080002;
         public static final int linearLayout1=0x7f08001c;
+        public static final int linearLayout3=0x7f080025;
         public static final int loggInnButton=0x7f08000e;
         public static final int loggUtButton=0x7f080016;
         public static final int menuBar=0x7f080011;
@@ -54,24 +56,24 @@ public final class R {
         public static final int reservert2=0x7f080024;
         public static final int romListe1=0x7f080003;
         public static final int romNavn=0x7f08001b;
-        public static final int romValg=0x7f080025;
+        public static final int romValg=0x7f080026;
         public static final int swiperefresh=0x7f080000;
         public static final int textView1=0x7f080010;
         public static final int toolbar=0x7f080001;
         public static final int txtDistance=0x7f080006;
         public static final int txtEmail=0x7f08000b;
-        public static final int txtFag=0x7f080029;
+        public static final int txtFag=0x7f08002a;
         public static final int txtName=0x7f080005;
         public static final int txtNavn=0x7f080008;
         public static final int txtPassword=0x7f08000c;
         public static final int txtRom=0x7f080007;
         public static final int txtTid=0x7f080009;
-        public static final int txtVeilederNavn=0x7f080028;
+        public static final int txtVeilederNavn=0x7f080029;
         public static final int userCourse=0x7f08001a;
         public static final int userLoginName=0x7f080019;
         public static final int userName=0x7f080018;
         public static final int veilederButton=0x7f080015;
-        public static final int veilederView=0x7f080027;
+        public static final int veilederView=0x7f080028;
         public static final int westerdalsLogo=0x7f080013;
     }
     public static final class layout {

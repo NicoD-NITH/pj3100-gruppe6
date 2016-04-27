@@ -59,13 +59,13 @@ namespace PJAPP
             reservert2 = FindViewById<TextView>(Resource.Id.reservert2);
             reservert1 = FindViewById<TextView>(Resource.Id.reservert1);
 
-            romNavn.Text = name;
+            romNavn.Text = "" + name;
             plasser.Text = storrelseText.ToString();
             prosjektor.Text = prosjektorText.ToString();
             reservert2.Text = "Rommet var sist reservert i tre timer fra " + bookingStamp;
 
             currentDate = DateTime.Now;
-            time = currentDate.ToString("MM.dd.yy HH:mm:ss");
+            time = currentDate.ToString("MM.dd.yyyy HH:mm:ss");
 
             thisHour = DateTime.Now.Hour;
             thisMinute = DateTime.Now.Minute;
@@ -105,11 +105,8 @@ namespace PJAPP
                 StartActivity(typeof(Menu));
             };
 
-
             reserverButton.Click += delegate
             {
-                bool timeSet = false;
-
                 /*if(!timeSet)
                 {
                     timePicker tPicker = timePicker.NewInstance(delegate (DateTime selectedTime)
@@ -120,29 +117,23 @@ namespace PJAPP
                     tPicker.Show(FragmentManager, "Pick a time:");
                 }*/
 
-                
-                Toast message = Toast.MakeText(this, time, ToastLength.Long);
-                message.Show();
                 if (RequestBooking())
                 {
-                    if (thisMinute >= 10)
-                    {
-                        reserverButton.Text = "Rommet er booket i 3 timer fra " + thisHour + ":" + thisMinute + ".";
-                    }
-                    else
-                    {
-                        reserverButton.Text = "Rommet er booket i 3 timer fra " + thisHour + ":" + "0" + thisMinute + ".";
-                    }
+                    Toast msg2 = Toast.MakeText(this, "Rommet kan ikke bookes for øyeblikket", ToastLength.Long);
+                    msg2.Show();
                 }
                 else
                 {
-                    Toast msg = Toast.MakeText(this, "Rommet kan ikke bookes for øyeblikket", ToastLength.Long);
-                    msg.Show();
+                    if (thisMinute >= 10)
+                    {
+                        reserverButton.Text = "Rommet er booket i 3 timer til " + (thisHour + 3) + ":" + thisMinute + ".";
+                    }
+                    else
+                    {
+                        reserverButton.Text = "Rommet er booket i 3 timer til " + (thisHour + 3) + ":" + "0" + thisMinute + ".";
+                    }
                 }
-
             };
-
-
         }
 
        
@@ -164,8 +155,7 @@ namespace PJAPP
 
                 string JSONString = JsonConvert.SerializeObject(DataObj, Formatting.None);
 
-
-                string url = "http://pj3100.somee.com/BookRomV2.php";
+                string url = "http://pj3100.somee.com/bookRom.php";
 
                 HttpWebRequest newRequest = (HttpWebRequest)WebRequest.Create(url);
 
@@ -254,7 +244,7 @@ namespace PJAPP
                 responseStream.Close();
                 myStream.Close();
 
-                if (result.Equals("1"))
+                if (result.Equals("0"))
                 {
                     return true;
                 }

@@ -84,7 +84,7 @@ namespace PJAPP
                             BeaconUUID = e.Beacons[i].ProximityUUID.ToString(),
                             BeaconMajor = e.Beacons[i].Major,
                             BeaconMinor = e.Beacons[i].Minor,
-                            distance = calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi)
+                            distance = calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi).ToString()
                         });
                     }
             };
@@ -135,7 +135,7 @@ namespace PJAPP
                                 BeaconUUID = Be.Beacons[i].ProximityUUID.ToString(),
                                 BeaconMajor = Be.Beacons[i].Major,
                                 BeaconMinor = Be.Beacons[i].Minor,
-                                distance = calculateDistance(Be.Beacons[i].MeasuredPower, Be.Beacons[i].Rssi)
+                                distance = calculateDistance(Be.Beacons[i].MeasuredPower, Be.Beacons[i].Rssi).ToString()
                             });
                     }
                     
@@ -147,7 +147,11 @@ namespace PJAPP
                             {
                                 if (b.BeaconUUID == b2.BeaconUUID && b.BeaconMajor == b2.BeaconMajor && b.BeaconMinor == b2.BeaconMinor)
                                 {
-                                    b.distance = b2.distance;
+                                    b.distance = b2.distance.ToString() + "m";
+                                    if (b.distance == "")
+                                    {
+                                        b.distance = "Ingen kontakt";
+                                    }
                                 }
                             }
                         }
@@ -276,7 +280,7 @@ namespace PJAPP
                         BeaconUUID = e.Beacons[i].ProximityUUID.ToString(),
                         BeaconMajor = e.Beacons[i].Major,
                         BeaconMinor = e.Beacons[i].Minor,
-                        distance = calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi)
+                        distance = calculateDistance(e.Beacons[i].MeasuredPower, e.Beacons[i].Rssi).ToString()
                     });
                 }
                 
@@ -288,7 +292,11 @@ namespace PJAPP
                         {
                             if (b.BeaconUUID == b2.BeaconUUID && b.BeaconMajor == b2.BeaconMajor && b.BeaconMinor == b2.BeaconMinor)
                             {
-                                b.distance = b2.distance;
+                                b.distance = b2.distance.ToString() + "m";
+                                if(b.distance == "")
+                                {
+                                    b.distance = "Ingen kontakt";
+                                }
                             }
                         }
                     }

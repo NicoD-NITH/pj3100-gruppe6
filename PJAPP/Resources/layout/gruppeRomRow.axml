@@ -7,32 +7,10 @@
     android:minHeight="25px"
     android:background="@drawable/infoBoxStyle"
     android:weightSum="100">
-<!--<TextView
-        android:text="Minor"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        android:layout_width="match_parent"
-        android:layout_weight="25"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtMinor"
-        android:paddingLeft="2dp"
-        android:paddingRight="2dp"
-        android:paddingBottom="2dp" />
-    <TextView
-        android:text="Major"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        android:layout_width="match_parent"
-        android:layout_weight="25"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtMajor"
-        android:paddingLeft="2dp"
-        android:paddingRight="2dp"
-        android:paddingBottom="2dp" />-->
     <TextView
         android:text="Name"
         android:textColor="#000000"
-        android:textSize="30sp"
+        android:textSize="28sp"
         android:layout_width="match_parent"
         android:layout_weight="30"
         android:layout_height="wrap_content"
@@ -43,7 +21,7 @@
     <TextView
         android:text="Distance"
         android:textColor="#000000"
-        android:textSize="30sp"
+        android:textSize="28sp"
         android:layout_width="match_parent"
         android:layout_weight="70"
         android:layout_height="wrap_content"

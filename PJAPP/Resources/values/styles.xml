@@ -4,4 +4,7 @@
     <item name="android:windowEnterAnimation">@anim/dialogSlideInUp</item>
     <item name="android:windowExitAnimation">@anim/dialogSlideOutUp</item>
   </style>
+
+  
+
 </resources>

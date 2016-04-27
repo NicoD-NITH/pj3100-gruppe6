@@ -10,6 +10,8 @@ using System.Net;
 using Newtonsoft.Json;
 using Android.Content;
 using Android.Support.V4.Widget;
+using System.IO;
+using Android.Preferences;
 
 namespace PJAPP
 {
@@ -26,6 +28,8 @@ namespace PJAPP
         public ListView veilederView;
         public List<veileder> veilederList;
 
+        string student;
+
         WebClient veilederClient;
         Uri servURL;
 
@@ -34,6 +38,9 @@ namespace PJAPP
             base.OnCreate(savedInstanceState);
             this.RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.veileder);
+
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(ApplicationContext);
+            student = prefs.GetString("userName", "");
 
             /*swiperefresh = FindViewById<SwipeRefreshLayout>(Resource.Id.swiperefresh);
             swiperefresh.Refresh += Swiperefresh_Refresh;*/
@@ -51,6 +58,14 @@ namespace PJAPP
             {
                 StartActivity(typeof(Menu));
             };
+
+            if(canGetHelp())
+            {
+                hjelpButton.Visibility = ViewStates.Visible;
+            } else
+            {
+                hjelpButton.Visibility = ViewStates.Invisible;
+            }
             hjelpButton.Click += delegate
             {
                 StartActivity(typeof(HelpList));
@@ -98,6 +113,69 @@ namespace PJAPP
             veilederHelpIntent.PutExtra("LoginName", LoginName);
 
             StartActivity(veilederHelpIntent);
+        }
+
+        public class canData
+        {
+            public string navn { get; set; }
+        }
+
+        public bool canGetHelp()
+        {
+            try
+            {
+                canData DataObj = new canData();
+                DataObj.navn = student;
+
+
+                string JSONString = JsonConvert.SerializeObject(DataObj, Formatting.None);
+
+                string url = "http://pj3100.somee.com/canGetHelp.php";
+
+                HttpWebRequest newRequest = (HttpWebRequest)WebRequest.Create(url);
+
+                newRequest.Method = "POST";
+
+                string postData = JSONString;
+
+                byte[] pdata = Encoding.UTF8.GetBytes(postData);
+
+                newRequest.ContentType = "application/x-www-form-urlencoded";
+                newRequest.ContentLength = pdata.Length;
+
+                Stream myStream = newRequest.GetRequestStream();
+                myStream.Write(pdata, 0, pdata.Length);
+
+                WebResponse myResponse = newRequest.GetResponse();
+
+                Stream responseStream = myResponse.GetResponseStream();
+
+                StreamReader streamReader = new StreamReader(responseStream);
+
+                string result = streamReader.ReadToEnd();
+
+
+                streamReader.Close();
+                responseStream.Close();
+                myStream.Close();
+
+                if (result.Equals("1"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (WebException ex)
+            {
+                string _exception = ex.ToString();
+                Toast error = Toast.MakeText(this, _exception, ToastLength.Long);
+                error.Show();
+                Console.WriteLine("--->" + _exception);
+                return false;
+            }
         }
     }
 }

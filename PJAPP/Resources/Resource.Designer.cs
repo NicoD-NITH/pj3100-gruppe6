@@ -104,13 +104,16 @@ namespace PJAPP
 			public const int menuItemStyle = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int sok = 2130837512;
+			public const int pil = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int styleEditText = 2130837513;
+			public const int sok = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int top_logo = 2130837514;
+			public const int styleEditText = 2130837514;
+			
+			// aapt resource value: 0x7f02000b
+			public const int top_logo = 2130837515;
 			
 			static Drawable()
 			{
@@ -128,8 +131,8 @@ namespace PJAPP
 			// aapt resource value: 0x7f080004
 			public const int HjelpButton = 2131230724;
 			
-			// aapt resource value: 0x7f080026
-			public const int ReserverButton = 2131230758;
+			// aapt resource value: 0x7f080027
+			public const int ReserverButton = 2131230759;
 			
 			// aapt resource value: 0x7f08000d
 			public const int buttonWrap = 2131230733;
@@ -148,6 +151,9 @@ namespace PJAPP
 			
 			// aapt resource value: 0x7f08001c
 			public const int linearLayout1 = 2131230748;
+			
+			// aapt resource value: 0x7f080025
+			public const int linearLayout3 = 2131230757;
 			
 			// aapt resource value: 0x7f08000e
 			public const int loggInnButton = 2131230734;
@@ -194,8 +200,8 @@ namespace PJAPP
 			// aapt resource value: 0x7f08001b
 			public const int romNavn = 2131230747;
 			
-			// aapt resource value: 0x7f080025
-			public const int romValg = 2131230757;
+			// aapt resource value: 0x7f080026
+			public const int romValg = 2131230758;
 			
 			// aapt resource value: 0x7f080000
 			public const int swiperefresh = 2131230720;
@@ -212,8 +218,8 @@ namespace PJAPP
 			// aapt resource value: 0x7f08000b
 			public const int txtEmail = 2131230731;
 			
-			// aapt resource value: 0x7f080029
-			public const int txtFag = 2131230761;
+			// aapt resource value: 0x7f08002a
+			public const int txtFag = 2131230762;
 			
 			// aapt resource value: 0x7f080005
 			public const int txtName = 2131230725;
@@ -230,8 +236,8 @@ namespace PJAPP
 			// aapt resource value: 0x7f080009
 			public const int txtTid = 2131230729;
 			
-			// aapt resource value: 0x7f080028
-			public const int txtVeilederNavn = 2131230760;
+			// aapt resource value: 0x7f080029
+			public const int txtVeilederNavn = 2131230761;
 			
 			// aapt resource value: 0x7f08001a
 			public const int userCourse = 2131230746;
@@ -245,8 +251,8 @@ namespace PJAPP
 			// aapt resource value: 0x7f080015
 			public const int veilederButton = 2131230741;
 			
-			// aapt resource value: 0x7f080027
-			public const int veilederView = 2131230759;
+			// aapt resource value: 0x7f080028
+			public const int veilederView = 2131230760;
 			
 			// aapt resource value: 0x7f080013
 			public const int westerdalsLogo = 2131230739;

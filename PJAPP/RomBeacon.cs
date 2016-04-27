@@ -10,6 +10,6 @@ namespace PJAPP
         public int Plasser { get; set; }
         public int IsBookable { get; set; }
         public string bookingStamp { get; set; }
-        public double distance { get; set; }
+        public string distance { get; set; }
     }
 }

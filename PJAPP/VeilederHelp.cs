@@ -31,6 +31,10 @@ namespace PJAPP
         TextView reserver2;
         TextView reservert2;
 
+        ImageView pil;
+        LinearLayout ln3;
+        TextView velg;
+
         Button reserverButton;
         ImageButton mainMenu;
         ImageButton menuButton;
@@ -73,6 +77,9 @@ namespace PJAPP
             plasser2 = FindViewById<TextView>(Resource.Id.plasser2);
             prosjektor1 = FindViewById<TextView>(Resource.Id.prosjektor1);
             prosjektor2 = FindViewById<TextView>(Resource.Id.prosjektor2);
+            //pil = FindViewById<ImageView>(Resource.Id.imageView1);
+            ln3 = FindViewById<LinearLayout>(Resource.Id.linearLayout3);
+            velg = FindViewById<TextView>(Resource.Id.textView1);
 
             reserverButton = FindViewById<Button>(Resource.Id.ReserverButton);
             menuButton = FindViewById<ImageButton>(Resource.Id.menuButton);
@@ -91,6 +98,8 @@ namespace PJAPP
 
             romValg = FindViewById<Spinner>(Resource.Id.romValg);
             romValg.Visibility = ViewStates.Visible;
+            velg.Visibility = ViewStates.Visible;
+            ln3.Visibility = ViewStates.Visible;
             
             romValg.ItemSelected += RomValg_ItemSelected;
             var adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.rom_navn, Resource.Layout.spinnerItem);
@@ -122,14 +131,15 @@ namespace PJAPP
 
             reserverButton.Click += delegate {
                 DateTime currentTime = DateTime.Now;
-                timeStamp = currentTime.ToString("MM.dd.yy HH:mm:ss");
-                if(reqHelp())
+                timeStamp = currentTime.ToString("MM.dd.yyyy HH:mm:ss");
+                if(reqHelp() == true)
+                {
+                    reserverButton.Text = "Forespørsel om hjelp sendt.";
+                } else
                 {
                     Toast msg = Toast.MakeText(this, "Noe gikk galt.", ToastLength.Long);
                     msg.Show();
-                } else
-                {
-                    reserverButton.Text = "Forespørsel om hjelp sendt.";
+                    
                 }
             };
         }
