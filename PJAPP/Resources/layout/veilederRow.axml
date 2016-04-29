@@ -6,12 +6,14 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:background="@drawable/infoBoxStyle"
-    android:weightSum="100">
+    android:weightSum="100"
+    android:paddingRight="5dp"
+    android:paddingLeft="5dp">
     <TextView
         android:text="Name"
         android:textColor="#000000"
         android:textSize="30sp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_weight="35"
         android:layout_height="wrap_content"
         android:id="@+id/txtVeilederNavn"
@@ -22,11 +24,12 @@
         android:text="Distance"
         android:textColor="#000000"
         android:textSize="30sp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_weight="65"
         android:layout_height="wrap_content"
         android:id="@+id/txtFag"
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
-        android:paddingBottom="2dp" />
+        android:paddingBottom="2dp"
+        android:gravity="right" />
 </LinearLayout>

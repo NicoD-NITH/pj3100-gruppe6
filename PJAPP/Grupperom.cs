@@ -148,7 +148,7 @@ namespace PJAPP
                                 if (b.BeaconUUID == b2.BeaconUUID && b.BeaconMajor == b2.BeaconMajor && b.BeaconMinor == b2.BeaconMinor)
                                 {
                                     b.distance = b2.distance.ToString() + "m";
-                                    if (b.distance == "")
+                                    if (b.distance.Equals(""))
                                     {
                                         b.distance = "Ingen kontakt";
                                     }
@@ -290,13 +290,12 @@ namespace PJAPP
                     {
                         foreach (RomBeacon b2 in romListe)
                         {
-                            if (b.BeaconUUID == b2.BeaconUUID && b.BeaconMajor == b2.BeaconMajor && b.BeaconMinor == b2.BeaconMinor)
+                            if (b.BeaconUUID == b2.BeaconUUID && b.BeaconMajor == b2.BeaconMajor && b.BeaconMinor == b2.BeaconMinor && (b2.distance != "0"))
                             {
                                 b.distance = b2.distance.ToString() + "m";
-                                if(b.distance == "")
-                                {
-                                    b.distance = "Ingen kontakt";
-                                }
+                            }else
+                            {
+                                b.distance = "Ingen kontakt";
                             }
                         }
                     }

@@ -50,7 +50,7 @@ namespace PJAPP
             txtFag.Text = mItems[position].FagID;
 
             TextView txtNavn = row.FindViewById<TextView>(Resource.Id.txtVeilederNavn);
-            txtNavn.Text = "" + mItems[position].VeilederNavn;
+            txtNavn.Text = mItems[position].VeilederNavn;
 
             return row;
         }

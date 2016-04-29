@@ -59,7 +59,7 @@ namespace PJAPP
             reservert2 = FindViewById<TextView>(Resource.Id.reservert2);
             reservert1 = FindViewById<TextView>(Resource.Id.reservert1);
 
-            romNavn.Text = "" + name;
+            romNavn.Text = " " + name;
             plasser.Text = storrelseText.ToString();
             prosjektor.Text = prosjektorText.ToString();
             reservert2.Text = "Rommet var sist reservert i tre timer fra " + bookingStamp;
@@ -76,6 +76,7 @@ namespace PJAPP
             if(isBookable == 0)
             {
                 reserver.Text = "Nei";
+                reserverButton.Visibility = ViewStates.Invisible;
                 reservert1.Visibility = ViewStates.Gone;
                 reservert2.Visibility = ViewStates.Gone;
             } else
